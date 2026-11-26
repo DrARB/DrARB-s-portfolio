@@ -1,1319 +1,2339 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. A. Raja Basha, M.E., Ph.D. | Professor & Head, Robotics & Automation | KVELL University</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display / Merriweather (Serif) + Inter (Sans) + JetBrains Mono -->
+    <meta name="description" content="Academic and Research Portfolio of Dr. A. Raja Basha, M.E., Ph.D., Professor and Head, Department of Robotics and Automation, KVELL University, Tamil Nadu, India.">
+    <title>Dr. A. Raja Basha, M.E., Ph.D. | Professor &amp; Head – Robotics &amp; Automation | KVELL University</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Merriweather', 'Georgia', 'serif'],
-                        display: ['Playfair Display', 'Georgia', 'serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        navy: {
-                            800: '#1E3A8A',
-                            900: '#0F172A',
-                            950: '#090E1A',
-                        },
-                        bronze: {
-                            100: '#FEF3C7',
-                            600: '#B45309',
-                            700: '#92400E',
-                        },
-                        ivory: {
-                            50: '#FAF9F6',
-                            100: '#F5F3EE',
-                        }
-                    }
-                }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================================
+           1. DESIGN TOKENS & BASE VARIABLES
+           ========================================================================== */
+        :root {
+            --navy-950: #091324;
+            --navy-900: #0f1e36;
+            --slate-blue: #1e3557;
+            --slate-blue-light: #2b4975;
+            --ivory-bg: #faf8f5;
+            --ivory-alt: #f3efe8;
+            --white: #ffffff;
+            --gold: #a8792a;
+            --gold-light: #d6a44b;
+            --gold-tint: #fbf5ea;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --border-color: #e2dcd2;
+            --border-subtle: #ebe6de;
+            --shadow-sm: 0 2px 6px rgba(15, 30, 54, 0.05);
+            --shadow-md: 0 8px 24px rgba(15, 30, 54, 0.08);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --font-serif: 'Playfair Display', 'Merriweather', Georgia, 'Times New Roman', serif;
+            --font-body-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        /* ==========================================================================
+           2. RESET & GLOBAL TYPOGRAPHY
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--ivory-bg);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--slate-blue);
+            text-decoration: none;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* ==========================================================================
+           3. STICKY HEADER & NAVIGATION
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 76px;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            color: var(--navy-900);
+        }
+
+        .brand:hover {
+            color: var(--navy-900);
+        }
+
+        .brand-monogram {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background-color: var(--navy-900);
+            border: 1.5px solid var(--gold);
+            color: var(--gold-light);
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--navy-900);
+            line-height: 1.2;
+        }
+
+        .brand-role {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-top: 0.15rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-links a {
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            background-color: var(--ivory-alt);
+            color: var(--navy-900);
+        }
+
+        .nav-links a.nav-cta {
+            margin-left: 0.4rem;
+            background-color: var(--navy-900);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links a.nav-cta:hover {
+            background-color: var(--slate-blue);
+            color: var(--white);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0.45rem 0.65rem;
+            color: var(--navy-900);
+            font-size: 1.15rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           4. HERO SECTION
+           ========================================================================== */
+        .hero {
+            background: linear-gradient(160deg, var(--navy-900) 0%, var(--slate-blue) 100%);
+            color: var(--white);
+            padding: 3.5rem 0 4rem;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .affiliation-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(214, 164, 75, 0.45);
+            color: #f6d594;
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1.1rem;
+        }
+
+        .affiliation-pill:hover {
+            background-color: rgba(255, 255, 255, 0.14);
+            color: var(--white);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 2.85rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title .degree {
+            font-family: var(--font-body-serif);
+            font-weight: 400;
+            font-size: 0.62em;
+            color: #f6d594;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body-serif);
+            font-size: 1.125rem;
+            color: #e2e8f0;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-meta {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+            margin-bottom: 1.35rem;
+        }
+
+        .hero-meta a {
+            color: #f6d594;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .hero-summary {
+            font-size: 0.96rem;
+            color: #e2e8f0;
+            line-height: 1.75;
+            border-left: 3px solid var(--gold-light);
+            padding-left: 1.1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-summary strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* Scholarly Identifiers Bar */
+        .identifiers-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #cbd5e1;
+            margin-bottom: 0.65rem;
+        }
+
+        .identifiers-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .id-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background-color: rgba(9, 19, 36, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #f1f5f9;
+            padding: 0.45rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .id-chip:hover {
+            border-color: var(--gold-light);
+            background-color: rgba(9, 19, 36, 0.9);
+            color: var(--white);
+        }
+
+        .id-chip code {
+            font-family: var(--font-mono);
+            color: #f6d594;
+            font-size: 0.78rem;
+        }
+
+        /* Portrait Card */
+        .portrait-card {
+            background-color: var(--navy-950);
+            border: 1px solid rgba(214, 164, 75, 0.4);
+            border-radius: var(--radius-lg);
+            padding: 1.35rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .portrait-frame {
+            width: 196px;
+            height: 216px;
+            margin: 0 auto 1rem;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 2px solid var(--gold-light);
+            background: linear-gradient(145deg, var(--slate-blue) 0%, var(--navy-950) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .portrait-fallback {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            width: 100%;
+            height: 100%;
+        }
+
+        .portrait-fallback.is-visible {
+            display: flex;
+        }
+
+        .fallback-circle {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-light);
+            background-color: rgba(15, 30, 54, 0.9);
+            color: #f6d594;
+            font-family: var(--font-serif);
+            font-size: 1.55rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.65rem;
+        }
+
+        .fallback-name {
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .fallback-sub {
+            font-size: 0.72rem;
+            color: #cbd5e1;
+            margin-top: 0.15rem;
+        }
+
+        .btn-portrait-upload {
+            width: 100%;
+            padding: 0.55rem 0.75rem;
+            border-radius: var(--radius-md);
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f6d594;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-portrait-upload:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--gold-light);
+        }
+
+        .portrait-note {
+            font-size: 0.71rem;
+            color: #94a3b8;
+            line-height: 1.45;
+            margin-top: 0.6rem;
+        }
+
+        .portrait-note code {
+            color: #f6d594;
+            font-family: var(--font-mono);
+        }
+
+        /* Bibliometrics & Experience Strip */
+        .metrics-strip {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .metrics-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metrics-header span:first-child {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #f6d594;
+        }
+
+        .metrics-header span:last-child {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background-color: rgba(9, 19, 36, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--radius-md);
+            padding: 1.1rem 1.15rem;
+        }
+
+        .metric-value {
+            font-family: var(--font-serif);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .metric-value.gold {
+            color: #f6d594;
+        }
+
+        .metric-title {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-top: 0.3rem;
+        }
+
+        .metric-detail {
+            font-size: 0.74rem;
+            color: #94a3b8;
+            margin-top: 0.2rem;
+        }
+
+        /* ==========================================================================
+           5. SHARED SECTION STYLES
+           ========================================================================== */
+        .section {
+            padding: 4.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-white {
+            background-color: var(--white);
+        }
+
+        .section-ivory {
+            background-color: var(--ivory-bg);
+        }
+
+        .section-alt {
+            background-color: var(--ivory-alt);
+        }
+
+        .section-header {
+            max-width: 760px;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-kicker {
+            display: inline-block;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--gold);
+            background-color: var(--gold-tint);
+            border: 1px solid rgba(168, 121, 42, 0.25);
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            margin-bottom: 0.65rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.6rem, 3vw, 2.15rem);
+            font-weight: 700;
+            color: var(--navy-900);
+            line-height: 1.25;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-desc {
+            font-size: 0.96rem;
+            color: var(--text-secondary);
+        }
+
+        /* ==========================================================================
+           6. CHRONOLOGICAL TIMELINE (APPOINTMENTS)
+           ========================================================================== */
+        .timeline {
+            position: relative;
+            padding-left: 1.75rem;
+            border-left: 2px solid var(--slate-blue);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            background-color: var(--ivory-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.4rem 1.6rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-item.is-current {
+            background-color: var(--white);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.25rem;
+            top: 1.6rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--slate-blue);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--slate-blue);
+        }
+
+        .timeline-item.is-current .timeline-dot {
+            background-color: var(--gold);
+            box-shadow: 0 0 0 2px var(--gold);
+        }
+
+        .timeline-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .timeline-role {
+            font-family: var(--font-serif);
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--navy-900);
+        }
+
+        .timeline-period {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            background-color: var(--ivory-alt);
+            color: var(--slate-blue);
+        }
+
+        .timeline-item.is-current .timeline-period {
+            background-color: var(--navy-900);
+            color: #f6d594;
+        }
+
+        .timeline-org {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--slate-blue);
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-org a {
+            color: var(--gold);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .timeline-body {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ==========================================================================
+           7. FUNDED GRANTS, CONSULTANCY & BOOKS GRID
+           ========================================================================== */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.65rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card.featured-grant {
+            border-top: 4px solid var(--gold);
+        }
+
+        .card.consultancy-card {
+            border-top: 4px solid var(--slate-blue);
+        }
+
+        .card-header-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.28rem 0.65rem;
+            border-radius: 4px;
+        }
+
+        .badge-gold {
+            background-color: var(--gold-tint);
+            color: var(--gold);
+            border: 1px solid rgba(168, 121, 42, 0.3);
+        }
+
+        .badge-navy {
+            background-color: rgba(15, 30, 54, 0.08);
+            color: var(--navy-900);
+            border: 1px solid rgba(15, 30, 54, 0.16);
+        }
+
+        .grant-amount {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy-900);
+        }
+
+        .card-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy-900);
+            line-height: 1.35;
+            margin-bottom: 0.65rem;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 1.15rem;
+        }
+
+        .card-footer-meta {
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .card-footer-meta code {
+            font-family: var(--font-mono);
+            color: var(--navy-900);
+            font-weight: 600;
+        }
+
+        .sub-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy-900);
+            margin: 2.75rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* ==========================================================================
+           8. PEER-REVIEWED PUBLICATIONS CATALOG
+           ========================================================================== */
+        .pub-controls {
+            background-color: var(--ivory-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 0.95rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--slate-blue);
+            color: var(--navy-900);
+        }
+
+        .filter-btn.active {
+            background-color: var(--navy-900);
+            border-color: var(--navy-900);
+            color: var(--white);
+        }
+
+        .search-box {
+            flex: 1 1 280px;
+            max-width: 380px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.55rem 0.85rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--slate-blue);
+            box-shadow: 0 0 0 3px rgba(30, 53, 87, 0.1);
+        }
+
+        .pub-status-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding: 0 0.2rem;
+        }
+
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .pub-item {
+            background-color: var(--ivory-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.15rem 1.35rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .pub-item:hover {
+            background-color: var(--white);
+            border-color: var(--slate-blue);
+        }
+
+        .pub-main {
+            flex: 1;
+        }
+
+        .pub-tags {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .pub-num {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .pub-badge-sci {
+            background-color: var(--navy-900);
+            color: #f6d594;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.18rem 0.55rem;
+            border-radius: 4px;
+        }
+
+        .pub-badge-scopus {
+            background-color: var(--gold-tint);
+            color: var(--gold);
+            border: 1px solid rgba(168, 121, 42, 0.3);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.55rem;
+            border-radius: 4px;
+        }
+
+        .pub-year {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 600;
+            background-color: var(--ivory-alt);
+            color: var(--navy-900);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .pub-if {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .pub-title {
+            font-family: var(--font-body-serif);
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--navy-900);
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-journal {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .btn-cite {
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            color: var(--slate-blue);
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .btn-cite:hover {
+            background-color: var(--navy-900);
+            border-color: var(--navy-900);
+            color: var(--white);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background-color: var(--ivory-bg);
+            border: 1px dashed var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        /* ==========================================================================
+           9. EDUCATION & CREDENTIALS SECTION
+           ========================================================================== */
+        .edu-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .edu-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--slate-blue);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.4rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .edu-card.phd {
+            border-left-color: var(--gold);
+        }
+
+        .edu-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .edu-level {
+            font-size: 0.73rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+        }
+
+        .edu-year {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--slate-blue);
+            background-color: var(--ivory-alt);
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+        }
+
+        .edu-degree {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-inst {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .credential-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            margin-top: 0.5rem;
+        }
+
+        .credential-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .credential-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .credential-list strong {
+            color: var(--navy-900);
+        }
+
+        /* ==========================================================================
+           10. FOOTER & CONTACT SECTION
+           ========================================================================== */
+        .site-footer {
+            background-color: var(--navy-950);
+            color: #cbd5e1;
+            padding: 4rem 0 2.5rem;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-kicker {
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #f6d594;
+            margin-bottom: 0.45rem;
+        }
+
+        .footer-name {
+            font-family: var(--font-serif);
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+        }
+
+        .footer-affiliation {
+            font-size: 0.92rem;
+            color: #e2e8f0;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-affiliation a {
+            color: #f6d594;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-box {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1rem;
+        }
+
+        .contact-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #94a3b8;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .contact-value {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--white);
+            word-break: break-all;
+        }
+
+        .btn-copy-small {
+            padding: 0.28rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid rgba(214, 164, 75, 0.45);
+            background-color: rgba(168, 121, 42, 0.2);
+            color: #f6d594;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .btn-copy-small:hover {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+
+        .address-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.85rem;
+        }
+
+        .address-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-md);
+            padding: 0.95rem 1rem;
+        }
+
+        .address-title {
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #f6d594;
+            margin-bottom: 0.35rem;
+        }
+
+        .address-text {
+            font-size: 0.84rem;
+            color: #cbd5e1;
+            line-height: 1.55;
+        }
+
+        /* Correspondence Form */
+        .form-card {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+        }
+
+        .form-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .form-subtitle {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin-bottom: 1.15rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.85rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.55rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: var(--navy-900);
+            color: var(--white);
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold-light);
+        }
+
+        .form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 1rem;
+        }
+
+        .btn-primary-gold {
+            padding: 0.6rem 1.15rem;
+            border-radius: 6px;
+            border: none;
+            background-color: var(--gold);
+            color: var(--white);
+            font-family: var(--font-sans);
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-primary-gold:hover {
+            background-color: #8f6520;
+        }
+
+        .btn-secondary-dark {
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background-color: transparent;
+            color: #e2e8f0;
+            font-family: var(--font-sans);
+            font-size: 0.84rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-secondary-dark:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.78rem;
+            color: #94a3b8;
+        }
+
+        /* ==========================================================================
+           11. TOAST FEEDBACK BANNER
+           ========================================================================== */
+        .toast {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 200;
+            background-color: var(--navy-900);
+            color: var(--white);
+            border: 1px solid var(--gold-light);
+            border-radius: var(--radius-md);
+            padding: 0.85rem 1.15rem;
+            box-shadow: var(--shadow-md);
+            max-width: 340px;
+            opacity: 0;
+            transform: translateY(16px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast-title {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #f6d594;
+            margin-bottom: 0.15rem;
+        }
+
+        .toast-msg {
+            font-size: 0.78rem;
+            color: #e2e8f0;
+        }
+
+        /* ==========================================================================
+           12. RESPONSIVE BREAKPOINTS & PRINT STYLES
+           ========================================================================== */
+        @media (max-width: 960px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait-card {
+                max-width: 340px;
+                margin: 0 auto;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
-    </script>
-</head>
-<body class="bg-ivory-50 text-slate-800 font-sans antialiased selection:bg-navy-900 selection:text-white">
 
-    <!-- Toast Notification Banner -->
-    <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-navy-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-amber-600/40 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-amber-600/20 text-amber-400 flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <div>
-                <p id="toast-title" class="text-sm font-semibold">Notification</p>
-                <p id="toast-message" class="text-xs text-slate-300">Action completed successfully.</p>
-            </div>
-        </div>
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem 1.25rem 1.5rem;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a.nav-cta {
+                margin-left: 0;
+                margin-top: 0.5rem;
+                text-align: center;
+            }
+
+            .mobile-toggle {
+                display: inline-block;
+            }
+
+            .two-col-grid,
+            .contact-cards,
+            .address-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pub-item {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .site-header,
+            .btn-portrait-upload,
+            .portrait-note,
+            .pub-controls,
+            .btn-cite,
+            .form-card,
+            .toast {
+                display: none !important;
+            }
+
+            .hero {
+                background: var(--navy-900) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        <div id="toast-title" class="toast-title">Notification</div>
+        <div id="toast-msg" class="toast-msg">Action completed.</div>
     </div>
 
-    <!-- Top Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Formal Monogram & Title -->
-                <a href="#overview" class="flex items-center gap-3.5 group">
-                    <div class="w-11 h-11 rounded-xl bg-navy-900 border border-amber-600/50 text-amber-400 flex items-center justify-center font-display font-bold text-lg shadow-sm group-hover:bg-navy-800 transition-colors">
-                        ARB
-                    </div>
-                    <div>
-                        <span class="block text-base sm:text-lg font-display font-bold text-navy-900 tracking-tight leading-none">
-                            Dr. A. Raja Basha, <span class="text-sm font-serif font-normal text-slate-600">M.E., Ph.D.</span>
-                        </span>
-                        <span class="block text-xs font-medium text-bronze-600 mt-1">
-                            Professor & Head • Dept. of Robotics & Automation, KVELL University
-                        </span>
-                    </div>
-                </a>
+    <!-- 1. Sticky Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#overview" class="brand">
+                <div class="brand-monogram" aria-hidden="true">ARB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Dr. A. Raja Basha, M.E., Ph.D.</span>
+                    <span class="brand-role">Professor &amp; Head, Robotics &amp; Automation • KVELL University</span>
+                </div>
+            </a>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-1">
-                    <a href="#overview" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Overview</a>
-                    <a href="#career" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Academic Career</a>
-                    <a href="#projects" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Funded Projects</a>
-                    <a href="#publications" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Publications & Books</a>
-                    <a href="#credentials" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Education & Credentials</a>
-                    <a href="#contact" class="ml-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-navy-900 text-white hover:bg-navy-800 border border-navy-900 transition-all shadow-xs">
-                        Contact
-                    </a>
-                </nav>
+            <button type="button" id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                &#9776;
+            </button>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-navy-900 hover:bg-slate-100 focus:outline-none">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Dropdown Navigation -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1 shadow-xl">
-            <a href="#overview" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Overview</a>
-            <a href="#career" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Academic Career</a>
-            <a href="#projects" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Funded Projects</a>
-            <a href="#publications" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Publications & Books</a>
-            <a href="#credentials" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Education & Credentials</a>
-            <a href="#contact" class="mobile-nav-link block mt-2 px-4 py-3 rounded-xl text-sm font-semibold text-center bg-navy-900 text-white">Contact & Correspondence</a>
+            <nav id="nav-links" class="nav-links" aria-label="Primary Navigation">
+                <a href="#overview">Overview</a>
+                <a href="#appointments">Appointments</a>
+                <a href="#research">Research &amp; Grants</a>
+                <a href="#publications">Publications</a>
+                <a href="#credentials">Credentials</a>
+                <a href="#contact" class="nav-cta">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- 1. Hero & Scholarly Profile Header -->
-    <section id="overview" class="relative bg-navy-900 text-white pt-14 pb-20 lg:pt-20 lg:pb-24 border-b-4 border-bronze-600">
-        <!-- Subtle Classical Grid Overlay -->
-        <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="scholarly-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-                        <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-width="0.75"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#scholarly-grid)" />
-            </svg>
-        </div>
-
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-                
-                <!-- Left Column: Credentials, Bio & Research Identifiers -->
-                <div class="lg:col-span-8 space-y-6">
-                    <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer" class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-xl bg-navy-800/80 hover:bg-navy-800 border border-amber-500/40 hover:border-amber-400 text-amber-300 text-xs font-medium transition-colors">
-                        <i class="fa-solid fa-university"></i>
-                        <span>Department of Robotics and Automation • KVELL University, Tamil Nadu (kvell.in)</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-400"></i>
-                    </a>
-
+    <main>
+        <!-- 2. Formal Hero Section -->
+        <section id="overview" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left Column: Academic Identity & Executive Summary -->
                     <div>
-                        <h1 class="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
-                            Dr. A. Raja Basha, <span class="text-amber-400 font-serif font-normal text-2xl sm:text-3xl">M.E., Ph.D.</span>
-                        </h1>
-                        <p class="text-lg sm:text-xl font-serif text-slate-200 mt-2">
-                            Professor and Head • Department of Robotics and Automation
-                        </p>
-                        <p class="text-xs sm:text-sm font-mono text-amber-300/90 mt-1">
-                            <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer" class="underline decoration-amber-400/60 hover:text-amber-200">KVELL University</a>, Tamil Nadu (April 2025 – Present)
-                        </p>
-                    </div>
-
-                    <!-- Executive Professional Summary -->
-                    <p class="text-slate-300 text-base leading-relaxed border-l-2 border-amber-500 pl-4">
-                        Professor and Head of the Department of Robotics and Automation at <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:underline font-semibold">KVELL University</a>, bringing <strong class="text-white font-semibold">19.5+ years of cumulative experience</strong> across teaching, funded research, industry, academic leadership, and institutional administration, including over seven years of post-Ph.D. academic service. Principal Investigator of a <strong class="text-white font-semibold">DST, Government of India-funded project valued at ₹28.89 Lakhs</strong>, with 20 SCI/SCIE and Scopus-indexed publications spanning Wireless Sensor Networks, IoT, Machine Learning, Embedded Systems, Cyber-Security, Robotics, and Intelligent Systems.
-                    </p>
-                        <p class="text-xs sm:text-sm font-mono text-amber-300/90 mt-1">
-                            Chennai Institute of Technology, Chennai (November 2026 – Present)
-                        </p>
-                    </div>
-
-                    <!-- Executive Professional Summary -->
-                    <p class="text-slate-300 text-base leading-relaxed border-l-2 border-amber-500 pl-4">
-                        Professor and academic administrator with <strong class="text-white font-semibold">19.5+ years of cumulative experience</strong> across teaching, funded research, industry, academic leadership, and institutional administration, including over seven years of post-Ph.D. academic service. Principal Investigator of a <strong class="text-white font-semibold">DST, Government of India-funded project valued at ₹28.89 Lakhs</strong>, with 20 SCI/SCIE and Scopus-indexed publications spanning Wireless Sensor Networks, IoT, Machine Learning, Embedded Systems, Cyber-Security, Robotics, and Intelligent Systems.
-                    </p>
-
-                    <!-- Experience Breakdown Strip -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
-                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
-                            <span class="block text-lg sm:text-xl font-display font-bold text-amber-400">19.5 Yrs</span>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Cumulative Experience</span>
-                        </div>
-                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
-                            <span class="block text-lg sm:text-xl font-display font-bold text-white">7 Yrs</span>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Post-Ph.D. Teaching</span>
-                        </div>
-                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
-                            <span class="block text-lg sm:text-xl font-display font-bold text-white">14.5 Yrs</span>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Total Research (Incl. Ph.D.)</span>
-                        </div>
-                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
-                            <span class="block text-lg sm:text-xl font-display font-bold text-white">5 Yrs</span>
-                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Industry & Pre-Ph.D. (5+5)</span>
-                        </div>
-                    </div>
-
-                    <!-- Research Identifiers & Scholarly Profiles Bar -->
-                    <div class="pt-2 space-y-2.5">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Verified Scholarly Identifiers & Repositories</p>
-                        <div class="flex flex-wrap gap-2.5">
-                            <a href="https://orcid.org/0000-0002-2327-2848" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
-                                <i class="fa-brands fa-orcid text-emerald-400 text-sm"></i>
-                                <span>ORCID: <strong class="font-mono text-amber-300">0000-0002-2327-2848</strong></span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-                            </a>
-
-                            <a href="https://www.scopus.com/authid/detail.uri?authorId=57212558657" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
-                                <i class="fa-solid fa-book-open text-amber-400 text-sm"></i>
-                                <span>Scopus ID: <strong class="font-mono text-amber-300">57212558657</strong> (18 Indexed)</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-                            </a>
-
-                            <a href="https://www.webofscience.com/wos/author/record/1473555" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
-                                <i class="fa-solid fa-award text-sky-400 text-sm"></i>
-                                <span>WoS ID: <strong class="font-mono text-amber-300">E-7993-2019</strong> (20 SCI / 16 Core)</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-                            </a>
-
-                            <a href="https://scholar.google.com/scholar?q=Dr+Adam+Raja+Basha" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
-                                <i class="fa-solid fa-graduation-cap text-blue-400 text-sm"></i>
-                                <span>Google Scholar</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-                            </a>
-
-                            <a href="https://www.linkedin.com/search/results/all/?keywords=Dr.%20A.%20Raja%20Basha" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
-                                <i class="fa-brands fa-linkedin text-sky-400 text-sm"></i>
-                                <span>LinkedIn</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Formal Portrait Frame & Portrait Uploader Helper -->
-                <div class="lg:col-span-4">
-                    <div class="bg-navy-950/90 border border-amber-600/40 rounded-2xl p-6 shadow-2xl text-center space-y-5">
-                        <!-- Portrait Container -->
-                        <div class="relative mx-auto w-44 h-48 sm:w-48 sm:h-52 rounded-2xl overflow-hidden border-2 border-amber-500/80 shadow-xl bg-gradient-to-b from-navy-800 to-navy-950 flex flex-col items-center justify-center group">
-                            <!-- Default local relative path `profile.jpg` for GitHub Pages; falls back gracefully to distinguished ARB monogram frame -->
-                            <img 
-                                id="portrait-image"
-                                src="./profile.jpg" 
-                                onerror="this.classList.add('hidden'); document.getElementById('portrait-monogram-fallback').classList.remove('hidden');"
-                                alt="Dr. A. Raja Basha, M.E., Ph.D." 
-                                class="w-full h-full object-cover object-top"
-                            >
-                            <!-- Distinguished Fallback Monogram Frame -->
-                            <div id="portrait-monogram-fallback" class="hidden w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-br from-navy-800 via-navy-900 to-slate-950">
-                                <div class="w-20 h-20 rounded-full border-2 border-amber-500/70 bg-navy-950/80 flex items-center justify-center mb-2.5 shadow-inner">
-                                    <span class="font-display font-bold text-2xl tracking-wider text-amber-400">ARB</span>
-                                </div>
-                                <span class="text-xs font-serif font-semibold text-white">Dr. A. Raja Basha</span>
-                                <span class="text-[10px] font-mono text-amber-300/80 mt-0.5">M.E., Ph.D. (Anna Univ.)</span>
-                            </div>
-                        </div>
-
-                        <!-- Portrait Upload / Preview Helper for GitHub Pages Deployment -->
-                        <div class="space-y-2">
-                            <input type="file" id="portrait-file-input" accept="image/*" class="hidden" onchange="previewPortraitPhoto(event)">
-                            <button type="button" onclick="document.getElementById('portrait-file-input').click()" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-amber-300 transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-camera"></i>
-                                <span>Upload / Preview Portrait Photo</span>
-                            </button>
-                            <p class="text-[11px] text-slate-400 leading-snug">
-                                Tip: Place your yellow-shirt portrait as <code class="text-amber-300 font-mono">profile.jpg</code> in the same folder as <code class="text-slate-300 font-mono">index.html</code> on GitHub Pages.
-                            </p>
-                        </div>
-
-                        <!-- Quick Official Contact & Print CV Action -->
-                        <div class="pt-3 border-t border-slate-800 space-y-2.5 text-left">
-                            <div class="flex items-center justify-between text-xs bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-800">
-                                <span class="font-mono text-slate-200 truncate">arajabasha@gmail.com</span>
-                                <button type="button" onclick="copyToClipboard('arajabasha@gmail.com', 'Email Copied')" class="text-amber-400 hover:text-amber-300 font-semibold ml-2 shrink-0">
-                                    Copy
-                                </button>
-                            </div>
-                            <button type="button" onclick="window.print()" class="w-full py-2.5 px-4 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-xs font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm">
-                                <i class="fa-solid fa-print"></i>
-                                <span>Print / Save Academic Profile PDF</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Bibliometric Dashboard Cards (As on October 2026) -->
-            <div class="mt-12 pt-8 border-t border-slate-800">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Bibliometric & Research Impact Indicators</span>
-                    <span class="text-xs font-mono text-slate-400">Verified Record • As on October 2026</span>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-quote-right"></i>
-                        </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-display font-bold text-white">476</p>
-                            <p class="text-xs text-slate-300 font-medium">Total Scholarly Citations</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-300 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-display font-bold text-white">9 <span class="text-slate-500 text-lg font-normal">|</span> 9</p>
-                            <p class="text-xs text-slate-300 font-medium">h-index: 9 &nbsp;•&nbsp; i10-index: 9</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-file-lines"></i>
-                        </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-display font-bold text-white">20</p>
-                            <p class="text-xs text-slate-300 font-medium">SCI / WoS Indexed Journals</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-indian-rupee-sign"></i>
-                        </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-display font-bold text-amber-400">₹29.14 L</p>
-                            <p class="text-xs text-slate-300 font-medium">DST Grant & Consultancy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. Academic & Administrative Appointments (Chronological Timeline) -->
-    <section id="career" class="py-16 sm:py-24 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mb-12 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100/80 text-bronze-700 text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-landmark"></i>
-                    Academic & Administrative Appointments
-                </div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-navy-900">
-                    Chronological Leadership & Teaching Tenure
-                </h2>
-                <p class="text-slate-600 text-sm sm:text-base font-serif">
-                    Over nineteen years of progressive academic, research governance, accreditation (NAAC/NBA/UGC), and institutional administration experience.
-                </p>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="relative border-l-2 border-navy-800/25 ml-3 sm:ml-6 space-y-8">
-                
-                <!-- Role 1 (Current Appointment) -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-bronze-600 ring-4 ring-amber-100"></span>
-                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Professor and Head – Department of Robotics and Automation
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-navy-900 text-amber-300 font-mono text-xs font-semibold shrink-0">
-                                April 2025 – Present (Current Appointment)
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-bronze-700 mb-3">
-                            <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer" class="hover:underline inline-flex items-center gap-1.5">
-                                <span>KVELL University, Tamil Nadu (https://kvell.in/)</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
-                            </a>
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Leading academic, research, and administrative operations for the Department of Robotics and Automation; coordinating NBA accreditation documentation, industry placements, faculty governance, curriculum innovation, and student research development.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role 2 -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Associate Professor and Head – Global Certifications
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
-                                January 2022 – April 2025
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-navy-800 mb-3">
-                            Koneru Lakshmaiah Education Foundation (KL University), Vijayawada, Andhra Pradesh
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Conducting core undergraduate and postgraduate academic teaching, supervising research scholars, and contributing to departmental curriculum development and laboratory innovation in embedded systems and wireless communications.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role 2 -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Professor and Head – Department of Robotics and Automation
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
-                                April 2025 – September 2026
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-navy-800 mb-3">
-                            KVILL University, Tamil Nadu
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Led comprehensive academic, research, and administrative operations of the department; coordinated NBA accreditation documentation, student placement readiness, faculty workload allocation, and holistic student technical development.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role 3 -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Associate Professor and Head – Global Certifications
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
-                                January 2022 – April 2025
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-navy-800 mb-3">
-                            Koneru Lakshmaiah Education Foundation (KLEF), Vijayawada, Andhra Pradesh
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Directed industry-recognized global certification programs for over <strong class="text-navy-900">3,200+ students</strong>; coordinated NAAC and NBA accreditation documentation; managed course coordination, outcome-based education (OBE) attainment, Skillathons, Faculty Development Programs (FDPs), and technical seminars.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role 4 -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Associate Professor and Dean – Research and Development
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
-                                January 2019 – January 2022
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-navy-800 mb-3">
-                            Audisankara Group of Institutions, Gudur, Andhra Pradesh
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Spearheaded institutional funded-project proposals, SCI/Scopus research publication drives, industrial consultancy engagements, departmental research targets, workshops, and regulatory NAAC, NBA, and UGC compliance documentation.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role 5 -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-slate-100"></span>
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Assistant Professor & Placement / Industrial Visit Coordinator
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
-                                June 2012 – July 2016
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-navy-800 mb-3">
-                            GRT Institute of Engineering and Technology, Tiruthani, Tamil Nadu
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Delivered undergraduate engineering courses, mentored student project teams, organized industrial visits and national conferences, coordinated campus placements, and prepared NBA accreditation files.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role 6 -->
-                <div class="relative pl-7 sm:pl-10">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-slate-100"></span>
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
-                                Assistant Professor
-                            </h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
-                                May 2011 – May 2012
-                            </span>
-                        </div>
-                        <p class="text-sm font-semibold text-navy-800 mb-3">
-                            VSB Engineering College, Karur, Tamil Nadu
-                        </p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            Handled undergraduate lecture courses and practical laboratory instruction in Computer Networks and Electronic Circuits.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Sponsored Research Projects & Industrial Consultancy -->
-    <section id="projects" class="py-16 sm:py-24 bg-ivory-100 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mb-12 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-navy-900 text-amber-300 text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-flask-vial"></i>
-                    Sponsored Research & Consultancy
-                </div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-navy-900">
-                    Government-Funded Grants & Industrial Projects
-                </h2>
-                <p class="text-slate-600 text-sm sm:text-base font-serif">
-                    Principal Investigator and Consultant for sponsored hardware-software R&D initiatives totaling ₹29,14,037.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- DST Funded Project -->
-                <div class="bg-white rounded-2xl border-2 border-amber-600/30 p-7 sm:p-8 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-amber-100 text-bronze-700 text-xs font-bold uppercase tracking-wide">
-                                Principal Investigator • DST Govt. of India
-                            </span>
-                            <span class="font-mono text-lg sm:text-xl font-bold text-navy-900 bg-ivory-50 px-3 py-1 rounded-xl border border-slate-200">
-                                ₹28,89,037
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold text-navy-900 mb-3 leading-snug">
-                            Development of Smart Wireless Bed Wet Detection System in Elderly Care
-                        </h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                            Technology Interventions for Disabled and Elderly (TIDE) initiative focused on non-invasive wireless moisture sensing, low-power embedded telemetry, and real-time caregiver alerting to enhance geriatric healthcare dignity and hygiene.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
-                        <span class="font-mono text-slate-600">
-                            <strong>Sanction Order:</strong> SEED/TIDE/2016/514
-                        </span>
-                        <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-semibold">
-                            Completed / Funded Grant
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Consultancy Project -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-navy-900/10 text-navy-900 text-xs font-bold uppercase tracking-wide">
-                                Principal Consultant • Industrial Consultancy
-                            </span>
-                            <span class="font-mono text-lg sm:text-xl font-bold text-navy-900 bg-ivory-50 px-3 py-1 rounded-xl border border-slate-200">
-                                ₹25,000
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold text-navy-900 mb-3 leading-snug">
-                            EsECC_SDN – Attack Detection and Classification Model for MANET
-                        </h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                            Design and validation of an Enhanced Elliptic Curve Cryptography and Software-Defined Networking (EsECC_SDN) intrusion detection and attack classification framework tailored for Mobile Ad-Hoc Networks (MANETs).
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
-                        <span class="font-mono text-slate-600">
-                            <strong>Domain:</strong> Network Security & SDN
-                        </span>
-                        <span class="px-2.5 py-1 rounded-md bg-blue-50 text-navy-800 font-semibold">
-                            Consultancy Deliverable
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Peer-Reviewed Publications & Authored Books (Interactive Filterable & Searchable Catalog) -->
-    <section id="publications" class="py-16 sm:py-24 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Header -->
-            <div class="max-w-3xl mb-10 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100/80 text-bronze-700 text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-book-journal-whills"></i>
-                    Scholarly Output & Monographs
-                </div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-navy-900">
-                    Peer-Reviewed Publications, Books & Keynote Contributions
-                </h2>
-                <p class="text-slate-600 text-sm sm:text-base font-serif">
-                    Comprehensive catalog of 20 SCI/WoS & Scopus-indexed journal articles, authored textbooks, Wiley book chapters, and international conference presentations.
-                </p>
-            </div>
-
-            <!-- Interactive Filter Tabs & Search Bar -->
-            <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                <!-- Category Tabs -->
-                <div class="flex flex-wrap gap-2" role="tablist">
-                    <button type="button" onclick="switchPubTab('journals')" id="tab-journals" class="pub-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-navy-900 text-white shadow-xs transition-all">
-                        All SCI/WoS & Scopus Journals (20)
-                    </button>
-                    <button type="button" onclick="switchPubTab('books')" id="tab-books" class="pub-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:text-navy-900 border border-slate-200 transition-all">
-                        Books & Book Chapters (2)
-                    </button>
-                    <button type="button" onclick="switchPubTab('conferences')" id="tab-conferences" class="pub-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:text-navy-900 border border-slate-200 transition-all">
-                        Conference & Keynote Talks (25+)
-                    </button>
-                </div>
-
-                <!-- Search Input (Applies to Journals) -->
-                <div id="pub-search-wrapper" class="relative w-full lg:w-80">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                    <input 
-                        type="text" 
-                        id="pub-search-input" 
-                        oninput="filterPublications()"
-                        placeholder="Search title, journal, or year (2018–2025)..." 
-                        class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white border border-slate-300 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-navy-800"
-                    >
-                </div>
-            </div>
-
-            <!-- PANEL A: All 20 Journals (16 Numbered SCI/WoS/Scopus + 4 Additional Scopus) -->
-            <div id="panel-journals" class="space-y-4">
-                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 px-1">
-                    <span id="journal-count-label">Showing all <strong>20</strong> indexed journal publications (2018–2025)</span>
-                    <span class="italic">Note: Journal impact factors are retained as reported in the Curriculum Vitae.</span>
-                </div>
-
-                <div id="journals-list" class="space-y-3.5">
-                    <!-- Populated dynamically via JavaScript for clean search/filter -->
-                </div>
-            </div>
-
-            <!-- PANEL B: Books & Book Chapters -->
-            <div id="panel-books" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Book 1 -->
-                <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-navy-900 text-amber-300 text-xs font-bold uppercase">Authored Textbook</span>
-                            <span class="font-mono text-xs font-semibold text-slate-600">Published: 2025</span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold text-navy-900 mb-2">
-                            Hands on Data Visualization
-                        </h3>
-                        <p class="text-sm font-medium text-bronze-700 mb-3">
-                            Role: Book Author • Scientific International Publishing House
-                        </p>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Comprehensive practical guide covering modern analytical visualization methodologies, exploratory data storytelling, and engineering dataset interpretation.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-200/80 text-xs font-mono text-slate-700">
-                        ISBN: 978-93-6674-629-6
-                    </div>
-                </div>
-
-                <!-- Book Chapter 2 -->
-                <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-amber-100 text-bronze-700 text-xs font-bold uppercase">Edited Volume Book Chapter</span>
-                            <span class="font-mono text-xs font-semibold text-slate-600">07 September 2021</span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold text-navy-900 mb-2">
-                            Chapter 8: Novel Deep Learning Approaches in Cyber Security and Digital Forensics
-                        </h3>
-                        <p class="text-sm font-medium text-navy-800 mb-3">
-                            In: <em>Simulation and Analysis of Mathematical Methods in Real-Time Engineering Applications</em> • John Wiley & Sons
-                        </p>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Examines deep neural architectures and mathematical modeling frameworks for automated cyber-threat detection and forensic analysis in real-time engineering networks.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between gap-2 text-xs font-mono">
-                        <span class="text-slate-700 truncate">DOI: 10.1002/9781119785521.ch8</span>
-                        <a href="https://doi.org/10.1002/9781119785521.ch8" target="_blank" rel="noopener noreferrer" class="text-navy-800 hover:underline font-semibold shrink-0">
-                            View DOI <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer" class="affiliation-pill">
+                            <span>Department of Robotics and Automation • KVELL University (kvell.in)</span>
+                            <span aria-hidden="true">&#8599;</span>
                         </a>
+
+                        <h1 class="hero-title">
+                            Dr. A. Raja Basha <span class="degree">M.E., Ph.D.</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Professor and Head – Department of Robotics and Automation
+                        </p>
+                        <p class="hero-meta">
+                            <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer">KVELL University</a>, Tamil Nadu, India &bull; Kanchipuram / Vandavasi, Tamil Nadu
+                        </p>
+
+                        <p class="hero-summary">
+                            Professor and academic administrator with <strong>19.5+ years of combined experience</strong> in teaching, research, industry, academic leadership, and institutional administration, including over seven years of post-Ph.D. academic service. Principal Investigator of a <strong>DST, Government of India-funded project valued at ₹28.89 Lakh</strong>, with SCI/SCIE and Scopus-indexed publications in wireless sensor networks, IoT, machine learning, embedded systems, cyber-security, robotics, and intelligent systems.
+                        </p>
+
+                        <div class="identifiers-label">Verified Scholarly Identifiers &amp; Repositories</div>
+                        <div class="identifiers-bar">
+                            <a href="https://orcid.org/0000-0002-2327-2848" target="_blank" rel="noopener noreferrer" class="id-chip">
+                                <span>ORCID:</span>
+                                <code>0000-0002-2327-2848</code>
+                            </a>
+                            <a href="https://www.scopus.com/authid/detail.uri?authorId=57212558657" target="_blank" rel="noopener noreferrer" class="id-chip">
+                                <span>Scopus ID:</span>
+                                <code>57212558657</code>
+                            </a>
+                            <a href="https://www.webofscience.com/wos/author/record/1473555" target="_blank" rel="noopener noreferrer" class="id-chip">
+                                <span>WoS Researcher ID:</span>
+                                <code>E-7993-2019</code>
+                            </a>
+                            <a href="https://scholar.google.com/scholar?q=Dr+Adam+Raja+Basha" target="_blank" rel="noopener noreferrer" class="id-chip">
+                                <span>Google Scholar</span>
+                            </a>
+                            <a href="https://www.linkedin.com/search/results/all/?keywords=Dr.%20A.%20Raja%20Basha" target="_blank" rel="noopener noreferrer" class="id-chip">
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Formal Portrait Card -->
+                    <aside class="portrait-card" aria-label="Faculty Portrait">
+                        <div class="portrait-frame">
+                            <img id="portrait-img" src="./profile.jpg" alt="Portrait of Dr. A. Raja Basha, M.E., Ph.D.">
+                            <div id="portrait-fallback" class="portrait-fallback">
+                                <div class="fallback-circle">ARB</div>
+                                <div class="fallback-name">Dr. A. Raja Basha</div>
+                                <div class="fallback-sub">M.E., Ph.D. &bull; Professor &amp; Head</div>
+                            </div>
+                        </div>
+
+                        <input type="file" id="portrait-input" accept="image/*" hidden>
+                        <button type="button" id="portrait-btn" class="btn-portrait-upload">
+                            Preview Portrait Photo
+                        </button>
+                        <p class="portrait-note">
+                            Save your portrait photo as <code>profile.jpg</code> alongside <code>index.html</code> when uploading to GitHub Pages.
+                        </p>
+                    </aside>
+                </div>
+
+                <!-- Key Bibliometrics & Experience Strip -->
+                <div class="metrics-strip">
+                    <div class="metrics-header">
+                        <span>Bibliometrics &amp; Experience Summary</span>
+                        <span>Citation Metrics as on 21/10/2026</span>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value gold">19.5+ Yrs</div>
+                            <div class="metric-title">Cumulative Experience</div>
+                            <div class="metric-detail">14.5 Yrs Research &bull; 12 Yrs Teaching &bull; 5 Yrs Industry</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">476</div>
+                            <div class="metric-title">Citations &bull; h-index: 9 &bull; i10: 9</div>
+                            <div class="metric-detail">Verified Scholarly Impact (21/10/2026)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">20 SCI</div>
+                            <div class="metric-title">SCI/WoS &amp; 18 Scopus Papers</div>
+                            <div class="metric-detail">16 WoS Core Collection Indexed</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value gold">₹29.14 L</div>
+                            <div class="metric-title">Funded Grants &amp; Consultancy</div>
+                            <div class="metric-detail">DST Govt. of India PI &amp; MANET Consultancy</div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- PANEL C: Conference & Keynote Talks -->
-            <div id="panel-conferences" class="hidden space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6">
-                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg mb-4">
-                            <i class="fa-solid fa-microphone-lines"></i>
-                        </div>
-                        <p class="text-3xl font-display font-bold text-navy-900">25+</p>
-                        <h3 class="text-base font-bold text-slate-900 mt-1">National & International Conference Presentations</h3>
-                        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                            Peer-reviewed research papers presented at IEEE, Springer, and international engineering symposiums on WSNs, IoT security, MIMO systems, and embedded control.
-                        </p>
-                    </div>
+        <!-- 3. Academic & Administrative Appointments -->
+        <section id="appointments" class="section section-white">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Academic Leadership &amp; Service</span>
+                    <h2 class="section-title">Academic &amp; Administrative Appointments</h2>
+                    <p class="section-desc">
+                        Chronological record of institutional governance, departmental leadership, accreditation coordination (NAAC/NBA/UGC), and university teaching appointments.
+                    </p>
+                </div>
 
-                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6">
-                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg mb-4">
-                            <i class="fa-solid fa-chalkboard-user"></i>
+                <div class="timeline">
+                    <!-- Appointment 1: KVELL University -->
+                    <article class="timeline-item is-current">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Professor and Head – Department of Robotics and Automation</h3>
+                            <span class="timeline-period">April 2025 – Present</span>
                         </div>
-                        <p class="text-3xl font-display font-bold text-navy-900">10+</p>
-                        <h3 class="text-base font-bold text-slate-900 mt-1">Faculty Development Programs (FDPs)</h3>
-                        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                            Completed and coordinated AICTE/ATAL and institutional FDPs in emerging electronics, machine learning, outcome-based education, and research methodology.
+                        <div class="timeline-org">
+                            <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer">KVELL University (https://kvell.in/)</a>, Tamil Nadu
+                        </div>
+                        <p class="timeline-body">
+                            Lead academic, research and administrative activities; coordinate NBA documentation, placements, faculty responsibilities and student development.
                         </p>
-                    </div>
+                    </article>
 
-                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6">
-                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg mb-4">
-                            <i class="fa-solid fa-podium"></i>
+                    <!-- Appointment 2: KLEF -->
+                    <article class="timeline-item">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Associate Professor and Head – Global Certifications</h3>
+                            <span class="timeline-period">January 2022 – April 2025</span>
                         </div>
-                        <p class="text-3xl font-display font-bold text-navy-900">3+</p>
-                        <h3 class="text-base font-bold text-slate-900 mt-1">Invited Guest Lectures & Keynote Talks</h3>
-                        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                            Delivered invited plenary talks and technical sessions at national conferences, technical symposiums, and engineering workshops.
+                        <div class="timeline-org">
+                            Koneru Lakshmaiah Education Foundation, Vijayawada
+                        </div>
+                        <p class="timeline-body">
+                            Led global certification activities for 3,200+ students; coordinated NAAC/NBA documentation; handled course coordination, outcome attainment, Skillathon, FDPs and seminars.
                         </p>
-                    </div>
+                    </article>
+
+                    <!-- Appointment 3: Audisankara -->
+                    <article class="timeline-item">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Associate Professor and Dean – Research and Development</h3>
+                            <span class="timeline-period">January 2019 – January 2022</span>
+                        </div>
+                        <div class="timeline-org">
+                            Audisankara Group of Institutions, Gudur
+                        </div>
+                        <p class="timeline-body">
+                            Coordinated funded-project proposals, publications, consultancy, research targets, workshops and NAAC/NBA/UGC documentation.
+                        </p>
+                    </article>
+
+                    <!-- Appointment 4: GRT -->
+                    <article class="timeline-item">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Assistant Professor and Placement / Industrial Visit Coordinator</h3>
+                            <span class="timeline-period">June 2012 – July 2016</span>
+                        </div>
+                        <div class="timeline-org">
+                            GRT Institute of Engineering and Technology, Tiruthani
+                        </div>
+                        <p class="timeline-body">
+                            Handled undergraduate teaching, student mentoring, industrial visits, conferences and NBA documentation.
+                        </p>
+                    </article>
+
+                    <!-- Appointment 5: VSB -->
+                    <article class="timeline-item">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Assistant Professor</h3>
+                            <span class="timeline-period">May 2011 – May 2012</span>
+                        </div>
+                        <div class="timeline-org">
+                            VSB Engineering College, Karur
+                        </div>
+                        <p class="timeline-body">
+                            Handled undergraduate teaching and laboratory responsibilities in Computer Networks and Electronic Circuits.
+                        </p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- 5. Academic Qualifications & Professional Credentials -->
-    <section id="credentials" class="py-16 sm:py-24 bg-ivory-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
-                
-                <!-- Left: Academic Qualifications (Anna University) -->
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-navy-900 text-amber-300 text-xs font-bold uppercase tracking-wider">
-                            <i class="fa-solid fa-user-graduate"></i>
-                            Academic Qualifications
-                        </div>
-                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-navy-900">
-                            University Degrees
-                        </h2>
-                    </div>
-
-                    <div class="space-y-4">
-                        <!-- Ph.D. -->
-                        <div class="bg-white border-l-4 border-bronze-600 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
-                            <div class="flex items-center justify-between gap-2 mb-1">
-                                <span class="text-xs font-bold uppercase tracking-wider text-bronze-700">Doctor of Philosophy (Full-Time)</span>
-                                <span class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-amber-100 text-bronze-700">2016 – 2019</span>
-                            </div>
-                            <h3 class="text-lg font-display font-bold text-navy-900">
-                                Ph.D. in Wireless Sensor Networks, IoT, Machine Learning & Embedded Systems
-                            </h3>
-                            <p class="text-sm font-medium text-slate-600 mt-1">
-                                Anna University, Chennai, Tamil Nadu
-                            </p>
-                        </div>
-
-                        <!-- M.E. -->
-                        <div class="bg-white border-l-4 border-navy-800 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
-                            <div class="flex items-center justify-between gap-2 mb-1">
-                                <span class="text-xs font-bold uppercase tracking-wider text-navy-800">Master of Engineering (Full-Time)</span>
-                                <span class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700">2009 – 2011</span>
-                            </div>
-                            <h3 class="text-lg font-display font-bold text-navy-900">
-                                M.E. in Power Electronics and Drives
-                            </h3>
-                            <p class="text-sm font-medium text-slate-600 mt-1">
-                                Anna University, Chennai, Tamil Nadu
-                            </p>
-                        </div>
-
-                        <!-- B.E. -->
-                        <div class="bg-white border-l-4 border-slate-400 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
-                            <div class="flex items-center justify-between gap-2 mb-1">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-600">Bachelor of Engineering (Full-Time)</span>
-                                <span class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700">2001 – 2005</span>
-                            </div>
-                            <h3 class="text-lg font-display font-bold text-navy-900">
-                                B.E. in Electronics and Communication Engineering
-                            </h3>
-                            <p class="text-sm font-medium text-slate-600 mt-1">
-                                Anna University, Chennai, Tamil Nadu
-                            </p>
-                        </div>
-                    </div>
+        <!-- 4. Sponsored Research, Consultancy & Book Publications -->
+        <section id="research" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Funded Projects &amp; Monographs</span>
+                    <h2 class="section-title">Sponsored Research, Consultancy &amp; Book Publications</h2>
+                    <p class="section-desc">
+                        Government-sponsored research grants, industrial consultancy deliverables, and peer-reviewed books and chapters.
+                    </p>
                 </div>
 
-                <!-- Right: Governance, Editorial Service & Financial/Regulatory Certifications -->
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100/80 text-bronze-700 text-xs font-bold uppercase tracking-wider">
-                            <i class="fa-solid fa-certificate"></i>
-                            Governance & Professional Service
+                <!-- Grants & Consultancy -->
+                <div class="two-col-grid">
+                    <article class="card featured-grant">
+                        <div>
+                            <div class="card-header-row">
+                                <span class="badge badge-gold">Principal Investigator • DST – Govt. of India</span>
+                                <span class="grant-amount">₹28,89,037</span>
+                            </div>
+                            <h3 class="card-title">
+                                Development of Smart Wireless Bed Wet Detection System in Elderly Care
+                            </h3>
+                            <p class="card-text">
+                                Sponsored under the Department of Science &amp; Technology (DST), Government of India SEED/TIDE program to engineer non-invasive wireless moisture telemetry and caregiver alert hardware for geriatric healthcare.
+                            </p>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-navy-900">
-                            Certifications & Editorial Credentials
-                        </h2>
-                    </div>
+                        <div class="card-footer-meta">
+                            <span>Sanction Order: <code>SEED/TIDE/2016/514</code></span>
+                            <span>Status: Sanctioned &amp; Executed</span>
+                        </div>
+                    </article>
 
-                    <div class="space-y-4">
-                        <!-- Corporate Governance -->
-                        <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-0.5">
-                                <i class="fa-solid fa-scale-balanced"></i>
+                    <article class="card consultancy-card">
+                        <div>
+                            <div class="card-header-row">
+                                <span class="badge badge-navy">Consultancy Project</span>
+                                <span class="grant-amount">₹25,000</span>
                             </div>
-                            <div>
-                                <h3 class="text-base font-display font-bold text-navy-900">
-                                    MCA-Registered Independent Director
-                                </h3>
-                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
-                                    Registered Independent Director with the <strong class="text-slate-800">Ministry of Corporate Affairs (MCA), Government of India</strong>, qualified for corporate board governance, audit oversight, and strategic advisory.
-                                </p>
-                            </div>
+                            <h3 class="card-title">
+                                EsECC_SDN – Attack Detection and Classification Model for MANET
+                            </h3>
+                            <p class="card-text">
+                                Industrial consultancy project delivering an Enhanced Elliptic Curve Cryptography and Software-Defined Networking (EsECC_SDN) intrusion detection and attack classification model for Mobile Ad-Hoc Networks.
+                            </p>
                         </div>
-
-                        <!-- Editorial & Peer Review Service -->
-                        <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-0.5">
-                                <i class="fa-solid fa-pen-nib"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-display font-bold text-navy-900">
-                                    International Journal & Conference Peer Reviewer
-                                </h3>
-                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
-                                    Active technical manuscript reviewer for flagship journals and conferences published by <strong class="text-slate-800">IEEE, Springer, Elsevier, Taylor & Francis, and Wiley</strong>.
-                                </p>
-                            </div>
+                        <div class="card-footer-meta">
+                            <span>Domain: <code>MANET &amp; SDN Security</code></span>
+                            <span>Role: Principal Consultant</span>
                         </div>
-
-                        <!-- Financial & Regulatory Certifications -->
-                        <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-0.5">
-                                <i class="fa-solid fa-shield-check"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-display font-bold text-navy-900">
-                                    Financial, Capital Markets & Regulatory Certifications
-                                </h3>
-                                <ul class="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-700">
-                                    <li class="flex items-center gap-2">
-                                        <i class="fa-solid fa-check text-bronze-600"></i>
-                                        <span><strong>AMFI</strong> – Mutual Fund Advisor Certification</span>
-                                    </li>
-                                    <li class="flex items-center gap-2">
-                                        <i class="fa-solid fa-check text-bronze-600"></i>
-                                        <span><strong>NCFM</strong> – Share Trading Certification (National Stock Exchange – NSE)</span>
-                                    </li>
-                                    <li class="flex items-center gap-2">
-                                        <i class="fa-solid fa-check text-bronze-600"></i>
-                                        <span><strong>IRDA</strong> – Life and General Insurance Advisor Certification</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
                 </div>
 
+                <!-- Authored Books & Book Chapters -->
+                <h3 class="sub-section-title">Books &amp; Edited Volume Chapters</h3>
+                <div class="two-col-grid">
+                    <article class="card">
+                        <div>
+                            <div class="card-header-row">
+                                <span class="badge badge-navy">Book – Author</span>
+                                <span class="edu-year">2025</span>
+                            </div>
+                            <h4 class="card-title">Hands on Data Visualization</h4>
+                            <p class="card-text">
+                                Published by <strong>Scientific International Publishing House</strong>. A comprehensive instructional text on analytical data visualization workflows and engineering dataset interpretation.
+                            </p>
+                        </div>
+                        <div class="card-footer-meta">
+                            <span>ISBN: <code>978-93-6674-629-6</code></span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div>
+                            <div class="card-header-row">
+                                <span class="badge badge-gold">Book Chapter (Chapter 8)</span>
+                                <span class="edu-year">07 September 2021</span>
+                            </div>
+                            <h4 class="card-title">
+                                Novel Deep Learning Approaches in Cyber Security and Digital Forensics
+                            </h4>
+                            <p class="card-text">
+                                Chapter 8 in <em>Simulation and Analysis of Mathematical Methods in Real-Time Engineering Applications</em>, published by <strong>Wiley</strong>.
+                            </p>
+                        </div>
+                        <div class="card-footer-meta">
+                            <span>DOI: <code>10.1002/9781119785521.ch8</code></span>
+                            <a href="https://doi.org/10.1002/9781119785521.ch8" target="_blank" rel="noopener noreferrer">View Publisher DOI &#8599;</a>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 6. Contact & Official Correspondence Footer -->
-    <footer id="contact" class="bg-navy-950 text-slate-300 pt-16 pb-12 border-t-4 border-bronze-600">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
-                
-                <!-- Left Column: Official Contact & Addresses -->
-                <div class="lg:col-span-6 space-y-6">
+        <!-- 5. Peer-Reviewed Journal Publications -->
+        <section id="publications" class="section section-white">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Scholarly Output</span>
+                    <h2 class="section-title">Peer-Reviewed Journal Publications</h2>
+                    <p class="section-desc">
+                        Complete catalog of 20 SCI/WoS and Scopus-indexed journal publications (2018–2025). Filter by indexing tier or search by topic, publisher, or year.
+                    </p>
+                </div>
+
+                <!-- Filter Tabs & Search Box -->
+                <div class="pub-controls">
+                    <div class="filter-tabs" role="tablist" aria-label="Filter publications by indexing">
+                        <button type="button" class="filter-btn active" data-filter="all">All (20)</button>
+                        <button type="button" class="filter-btn" data-filter="sci">SCI &amp; Scopus (15)</button>
+                        <button type="button" class="filter-btn" data-filter="scopus">Scopus Indexed (5)</button>
+                    </div>
+                    <div class="search-box">
+                        <label for="pub-search" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">Search publications</label>
+                        <input type="search" id="pub-search" class="search-input" placeholder="Search title, journal, or year...">
+                    </div>
+                </div>
+
+                <div class="pub-status-bar">
+                    <span id="pub-count">Showing 20 of 20 publications</span>
+                    <span>Journal impact factors are retained as reported in the Curriculum Vitae.</span>
+                </div>
+
+                <div id="pub-list" class="pub-list"></div>
+            </div>
+        </section>
+
+        <!-- 6. Education, Certifications & Professional Service -->
+        <section id="credentials" class="section section-ivory">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Academic Pedigree &amp; Governance</span>
+                    <h2 class="section-title">Education, Certifications &amp; Professional Service</h2>
+                    <p class="section-desc">
+                        Full-time doctoral and engineering degrees from Anna University alongside editorial peer-review service and statutory certifications.
+                    </p>
+                </div>
+
+                <div class="two-col-grid">
+                    <!-- Left Column: Education -->
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Official Correspondence</span>
-                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
-                            Dr. A. Raja Basha, M.E., Ph.D.
-                        </h2>
-                        <p class="text-sm text-slate-400 mt-1">
-                            Professor and Head, Department of Robotics and Automation<br>
-                            <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:underline">KVELL University (https://kvell.in/)</a>, Tamil Nadu, India
-                        </p>
-                    </div>
+                        <h3 class="sub-section-title" style="margin-top:0;">University Qualifications (Anna University)</h3>
+                        <div class="edu-stack">
+                            <article class="edu-card phd">
+                                <div class="edu-top">
+                                    <span class="edu-level">Ph.D. (Full-Time)</span>
+                                    <span class="edu-year">2016 – 2019</span>
+                                </div>
+                                <h4 class="edu-degree">Wireless Sensor Networks, IoT, Machine Learning and Embedded Systems</h4>
+                                <p class="edu-inst">Anna University, Chennai, Tamil Nadu</p>
+                            </article>
 
-                    <!-- Direct Contact Badges -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                        <div class="bg-navy-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-2">
-                            <div class="min-w-0">
-                                <span class="block text-[11px] uppercase tracking-wider text-slate-400">Personal & Academic Email</span>
-                                <span class="block text-xs sm:text-sm font-mono text-white truncate mt-0.5">arajabasha@gmail.com</span>
-                            </div>
-                            <button type="button" onclick="copyToClipboard('arajabasha@gmail.com', 'Email Address Copied')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-bronze-600 text-xs font-semibold text-white transition-colors shrink-0">
-                                Copy
-                            </button>
-                        </div>
+                            <article class="edu-card">
+                                <div class="edu-top">
+                                    <span class="edu-level">M.E. (Full-Time)</span>
+                                    <span class="edu-year">2009 – 2011</span>
+                                </div>
+                                <h4 class="edu-degree">Power Electronics and Drives</h4>
+                                <p class="edu-inst">Anna University, Chennai, Tamil Nadu</p>
+                            </article>
 
-                        <div class="bg-navy-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-2">
-                            <div>
-                                <span class="block text-[11px] uppercase tracking-wider text-slate-400">Direct Mobile</span>
-                                <a href="tel:+919944960517" class="block text-xs sm:text-sm font-mono text-amber-300 hover:underline mt-0.5">+91 99449 60517</a>
-                            </div>
-                            <button type="button" onclick="copyToClipboard('+91 99449 60517', 'Mobile Number Copied')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-bronze-600 text-xs font-semibold text-white transition-colors shrink-0">
-                                Copy
-                            </button>
+                            <article class="edu-card">
+                                <div class="edu-top">
+                                    <span class="edu-level">B.E. (Full-Time)</span>
+                                    <span class="edu-year">2001 – 2005</span>
+                                </div>
+                                <h4 class="edu-degree">Electronics and Communication Engineering</h4>
+                                <p class="edu-inst">Anna University, Chennai, Tamil Nadu</p>
+                            </article>
                         </div>
                     </div>
 
-                    <!-- Residential Addresses -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                        <div class="bg-navy-900/70 border border-slate-800/90 rounded-xl p-4">
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1.5">
-                                <i class="fa-solid fa-location-dot mr-1"></i> Present Address
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                                No. 2, Car Street,<br>
+                    <!-- Right Column: Outreach, Editorial & Governance Certifications -->
+                    <div class="edu-stack">
+                        <h3 class="sub-section-title" style="margin-top:0;">Outreach, Peer Review &amp; Governance</h3>
+
+                        <article class="card">
+                            <h4 class="card-title">Academic Outreach &amp; Editorial Peer Review</h4>
+                            <ul class="credential-list">
+                                <li><strong>Conference Presentations:</strong> 25+ National and International conference research presentations.</li>
+                                <li><strong>Faculty Development &amp; Keynotes:</strong> 10+ FDPs attended and 3+ invited Guest Lectures delivered at conferences and technical symposiums.</li>
+                                <li><strong>Journal &amp; Conference Reviewer:</strong> Active peer reviewer for publications by <strong>IEEE, Springer, Elsevier, Taylor &amp; Francis, and Wiley</strong>.</li>
+                            </ul>
+                        </article>
+
+                        <article class="card">
+                            <h4 class="card-title">Corporate Governance &amp; Financial Certifications</h4>
+                            <ul class="credential-list">
+                                <li><strong>Independent Director:</strong> Ministry of Corporate Affairs (MCA), Government of India-registered Independent Director.</li>
+                                <li><strong>AMFI Certification:</strong> Mutual Fund Advisor Certification.</li>
+                                <li><strong>NCFM Certification:</strong> Share Trading Certification (National Stock Exchange – NSE).</li>
+                                <li><strong>IRDA Certification:</strong> Life and General Insurance Advisor Certification.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Formal Contact & Correspondence Footer -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Left Column: Direct Details & Addresses -->
+                <div>
+                    <div class="footer-kicker">Official Correspondence</div>
+                    <h2 class="footer-name">Dr. A. Raja Basha, M.E., Ph.D.</h2>
+                    <p class="footer-affiliation">
+                        Professor and Head – Department of Robotics and Automation<br>
+                        <a href="https://kvell.in/" target="_blank" rel="noopener noreferrer">KVELL University (https://kvell.in/)</a>, Tamil Nadu, India
+                    </p>
+
+                    <div class="contact-cards">
+                        <div class="contact-box">
+                            <div class="contact-label">Official &amp; Personal Email</div>
+                            <div class="contact-value-row">
+                                <span class="contact-value">arajabasha@gmail.com</span>
+                                <button type="button" id="copy-email-btn" class="btn-copy-small">Copy</button>
+                            </div>
+                        </div>
+
+                        <div class="contact-box">
+                            <div class="contact-label">Direct Mobile</div>
+                            <div class="contact-value-row">
+                                <a href="tel:+919944960517" class="contact-value">+91 99449 60517</a>
+                                <button type="button" id="copy-phone-btn" class="btn-copy-small">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="address-grid">
+                        <div class="address-box">
+                            <div class="address-title">Present Address</div>
+                            <p class="address-text">
+                                No 2 Car Street,<br>
                                 Kanchipuram – 631502,<br>
-                                Tamil Nadu, India.
+                                Tamil Nadu, India
                             </p>
                         </div>
 
-                        <div class="bg-navy-900/70 border border-slate-800/90 rounded-xl p-4">
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
-                                <i class="fa-solid fa-house-chimney mr-1"></i> Permanent Address
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                                No. 16N, Meennakadarsa 1st Street,<br>
+                        <div class="address-box">
+                            <div class="address-title">Permanent Address</div>
+                            <p class="address-text">
+                                No 16N Meennakadarsa 1st Street,<br>
                                 Vandavasi – 604408,<br>
-                                Tamil Nadu, India.
+                                Tamil Nadu, India
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Formal Academic & Research Inquiry Form -->
-                <div class="lg:col-span-6">
-                    <div class="bg-navy-900 border border-slate-800 rounded-2xl p-6 sm:p-7">
-                        <h3 class="text-lg font-display font-bold text-white mb-1">Academic, Doctoral & Consultancy Correspondence</h3>
-                        <p class="text-xs text-slate-400 mb-5">
-                            Send an inquiry regarding research collaboration, Ph.D. supervision, journal peer-review invitations, or technical consultancy.
-                        </p>
-
-                        <form id="academic-contact-form" onsubmit="handleAcademicContact(event)" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="sender-name" class="block text-xs font-medium text-slate-300 mb-1">Full Name & Title</label>
-                                    <input type="text" id="sender-name" required placeholder="Dr. / Prof. / Mr. / Ms." class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-                                </div>
-                                <div>
-                                    <label for="sender-email" class="block text-xs font-medium text-slate-300 mb-1">Official Email Address</label>
-                                    <input type="email" id="sender-email" required placeholder="name@institution.edu" class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="inquiry-subject" class="block text-xs font-medium text-slate-300 mb-1">Subject of Correspondence</label>
-                                <select id="inquiry-subject" class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-500">
-                                    <option value="Research Collaboration / Funded Proposal">Research Collaboration / Funded Proposal</option>
-                                    <option value="Ph.D. / Postgraduate Research Supervision">Ph.D. / Postgraduate Research Supervision</option>
-                                    <option value="Keynote Lecture / FDP / Editorial Invitation">Keynote Lecture / FDP / Editorial Invitation</option>
-                                    <option value="Industrial Consultancy & Board Advisory">Industrial Consultancy & Board Advisory</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="inquiry-body" class="block text-xs font-medium text-slate-300 mb-1">Message</label>
-                                <textarea id="inquiry-body" rows="3" required placeholder="Please provide details regarding your academic or institutional inquiry..." class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
-                            </div>
-
-                            <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                                <button type="submit" class="px-5 py-2.5 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-xs sm:text-sm font-semibold transition-colors flex items-center gap-2">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                    <span>Prepare & Log Inquiry</span>
-                                </button>
-                                <button type="button" onclick="window.print()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium transition-colors flex items-center gap-2">
-                                    <i class="fa-solid fa-file-pdf text-amber-400"></i>
-                                    <span>Printable CV Summary</span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <!-- Right Column: Correspondence Inquiry Form -->
+                <div class="form-card">
+                    <h3 class="form-title">Academic &amp; Research Inquiry</h3>
+                    <p class="form-subtitle">
+                        Prepare an academic, doctoral supervision, editorial review, or consultancy message.
+                    </p>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="sender-name" class="form-label">Full Name &amp; Designation</label>
+                            <input type="text" id="sender-name" class="form-control" required placeholder="e.g., Dr. S. Kumar, Associate Professor">
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-email" class="form-label">Return Email Address</label>
+                            <input type="email" id="sender-email" class="form-control" required placeholder="name@university.edu">
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-topic" class="form-label">Subject</label>
+                            <select id="sender-topic" class="form-control">
+                                <option value="Research Collaboration / Funded Project">Research Collaboration / Funded Project</option>
+                                <option value="Ph.D. / Postgraduate Supervision">Ph.D. / Postgraduate Supervision</option>
+                                <option value="Keynote Lecture / FDP / Journal Review">Keynote Lecture / FDP / Journal Review</option>
+                                <option value="Industrial Consultancy / Board Advisory">Industrial Consultancy / Board Advisory</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-message" class="form-label">Message</label>
+                            <textarea id="sender-message" class="form-control" rows="3" required placeholder="Write your message here..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary-gold">Submit Inquiry</button>
+                            <button type="button" id="print-cv-btn" class="btn-secondary-dark">Print Academic Profile</button>
+                        </div>
+                    </form>
                 </div>
-
             </div>
 
-            <!-- Bottom Copyright & Indexing Bar -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-                <p>&copy; <span id="current-year"></span> Dr. A. Raja Basha, M.E., Ph.D. All Rights Reserved.</p>
-                <p class="font-mono text-slate-400">ORCID: 0000-0002-2327-2848 &bull; Scopus: 57212558657 &bull; WoS: E-7993-2019</p>
+            <div class="footer-bottom">
+                <span>&copy; <span id="footer-year">2026</span> Dr. A. Raja Basha, M.E., Ph.D. All Rights Reserved.</span>
+                <span>ORCID: 0000-0002-2327-2848 &bull; Scopus: 57212558657 &bull; WoS: E-7993-2019</span>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript: Publications Catalog Data, Search/Filter, Portrait Preview & Clipboard -->
     <script>
-        // Dynamic year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        (function () {
+            "use strict";
 
-        // Mobile Navigation Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-
-        // Local Portrait Photo Preview Helper (Allows Dr. Basha to preview his yellow-shirt photo immediately)
-        function previewPortraitPhoto(event) {
-            const file = event.target.files && event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.getElementById('portrait-image');
-                const fallback = document.getElementById('portrait-monogram-fallback');
-                img.src = e.target.result;
-                img.classList.remove('hidden');
-                fallback.classList.add('hidden');
-                showToast('Portrait Photo Loaded', 'Previewing selected portrait image in academic profile frame.');
-            };
-            reader.readAsDataURL(file);
-        }
-
-        // Complete 20-Item Journal Catalog from Curriculum Vitae
-        const journalPublications = [
-            {
-                no: 1,
-                title: "IoT-based smart healthcare using efficient data gathering and data analysis",
-                journal: "Peer-to-Peer Networking and Applications (Springer)",
-                year: "2025",
-                impactFactor: "2.6",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 2,
-                title: "An optimal secure defense mechanism for DDoS attack in IoT network using feature optimization and intrusion detection system",
-                journal: "Journal of Intelligent & Fuzzy Systems: Applications in Engineering and Technology (SAGE)",
-                year: "2024",
-                impactFactor: "1.0",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 3,
-                title: "Hybrid Optimization Algorithms for Resource Allocation in Heterogeneous Cognitive Radio Networks",
-                journal: "Neural Processing Letters (Springer)",
-                year: "2023",
-                impactFactor: "2.8",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 4,
-                title: "Reconfigurable design of hybrid MIMO detection scheme for spatially multiplexed MIMO system",
-                journal: "Telecommunication Systems (Springer)",
-                year: "2023",
-                impactFactor: "2.3",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 5,
-                title: "Enhanced Life Time Improvement for Wireless Body Sensor Networks using Optimal Clustering and Advanced Path Selection Protocol",
-                journal: "Wireless Personal Communications (Springer)",
-                year: "2022",
-                impactFactor: "2.2",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 6,
-                title: "Brushless direct current motor with MV-PID controller management system based on arm microcontroller",
-                journal: "Circuit World (Emerald)",
-                year: "2022",
-                impactFactor: "0.7",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 7,
-                title: "A Review on Wireless Sensor Networks: Routing",
-                journal: "Wireless Personal Communications (Springer)",
-                year: "2021",
-                impactFactor: "2.2",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 8,
-                title: "Improved torque performance in BLDC-motor-drive through Jaya optimization implemented on Xilinx platform",
-                journal: "Microprocessors and Microsystems (Elsevier)",
-                year: "2021",
-                impactFactor: "2.6",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 9,
-                title: "An optimized deep neural network based DoS attack detection in wireless video sensor network",
-                journal: "Journal of Ambient Intelligence and Humanized Computing (Springer)",
-                year: "2021",
-                impactFactor: "1.0",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 10,
-                title: "Energy efficient aggregation technique-based realizable secure aware routing protocol for wireless sensor network",
-                journal: "IET Wireless Sensor Systems (IET)",
-                year: "2020",
-                impactFactor: "2.4",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 11,
-                title: "Smart home autonomous water management system for agricultural applications",
-                journal: "World Journal of Engineering (Emerald)",
-                year: "2020",
-                impactFactor: "1.6",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 12,
-                title: "An improved power conditioning system for grid integration of solar power using ANFIS based FOPID controller",
-                journal: "Microprocessors and Microsystems (Elsevier)",
-                year: "2020",
-                impactFactor: "2.6",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 13,
-                title: "NOSS (Novel Optimal Sleep Scheduling) scheme for energy and data reliability optimization in mobile cloud-assisted wireless sensor networks",
-                journal: "The Journal of Engineering (Wiley-IET)",
-                year: "2020",
-                impactFactor: "1.0",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 14,
-                title: "Optimal partial aggregation based energy delay compromise technique for wireless sensor network",
-                journal: "IETE Journal of Research",
-                year: "2019",
-                impactFactor: "2.0",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 15,
-                title: "An optimal data aggregation scheme for wireless sensor network using QOS parameters with efficient failure detection and loss recovery technique",
-                journal: "Neural Network World",
-                year: "2019",
-                impactFactor: "1.6",
-                indexing: "SCI & Scopus"
-            },
-            {
-                no: 16,
-                title: "Double secure optimal partial aggregation using trust inference and hybrid syncryption algorithm for wireless sensor networks",
-                journal: "Journal of Computational and Theoretical Nanoscience",
-                year: "2018",
-                impactFactor: "1.0",
-                indexing: "Scopus"
-            },
-            {
-                no: 17,
-                title: "An Energy and Delay Aware Optimal Data Aggregation using Three Fold Algorithm for WSN",
-                journal: "International Journal of Business Information Systems",
-                year: "Scopus",
-                impactFactor: "1.2",
-                indexing: "Q2 Scopus-Indexed"
-            },
-            {
-                no: 18,
-                title: "Swarm Intellect Optimization Technique (SIOT) based mischievous detection and improve Authentication in Mobile Wireless Sensor Network",
-                journal: "Turkish Online Journal of Qualitative Inquiry",
-                year: "Scopus",
-                impactFactor: "—",
-                indexing: "Scopus-Indexed"
-            },
-            {
-                no: 19,
-                title: "Robust Real-Time Multiscale Ship Detection Using YOLOv3 and Support Vector Machines",
-                journal: "Aegaeum Journal, Vol. 8(8), pp. 842–854",
-                year: "Scopus",
-                impactFactor: "—",
-                indexing: "Scopus-Indexed"
-            },
-            {
-                no: 20,
-                title: "An Optimization Algorithm to Improve Lifetime of Wireless Video Sensor Network over the Secure Transmission Link with Enhanced Security Feature",
-                journal: "Solid State Technology",
-                year: "Scopus",
-                impactFactor: "—",
-                indexing: "Q4 Scopus-Indexed"
-            }
-        ];
-
-        // Render Journal Publications
-        function renderJournals(items) {
-            const container = document.getElementById('journals-list');
-            const countLabel = document.getElementById('journal-count-label');
-            container.innerHTML = '';
-
-            if (items.length === 0) {
-                countLabel.innerHTML = 'No matching journal publications found.';
-                container.innerHTML = `
-                    <div class="p-8 text-center rounded-2xl bg-ivory-50 border border-slate-200 text-sm text-slate-600">
-                        No publications matched your search query. Try searching by topic (e.g., <em>IoT, MIMO, BLDC, Springer, 2023</em>).
-                    </div>`;
-                return;
-            }
-
-            countLabel.innerHTML = `Showing <strong>${items.length}</strong> of <strong>${journalPublications.length}</strong> indexed journal publications`;
-
-            items.forEach(pub => {
-                const isSCI = pub.indexing.includes('SCI');
-                const badgeClass = isSCI 
-                    ? 'bg-navy-900 text-amber-300 border-navy-900' 
-                    : 'bg-amber-100/80 text-bronze-700 border-amber-300';
-
-                const card = document.createElement('article');
-                card.className = 'bg-ivory-50/70 hover:bg-white border border-slate-200 hover:border-navy-800/40 rounded-xl p-4 sm:p-5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4';
-                card.innerHTML = `
-                    <div class="space-y-1.5">
-                        <div class="flex flex-wrap items-center gap-2">
-                            <span class="font-mono text-xs font-bold text-slate-500">#${String(pub.no).padStart(2, '0')}</span>
-                            <span class="px-2.5 py-0.5 rounded-md border text-[11px] font-semibold ${badgeClass}">
-                                ${pub.indexing}
-                            </span>
-                            ${pub.year !== 'Scopus' ? `<span class="font-mono text-xs font-semibold text-navy-800 bg-slate-200/70 px-2 py-0.5 rounded-md">${pub.year}</span>` : ''}
-                            ${pub.impactFactor !== '—' ? `<span class="font-mono text-[11px] text-slate-600">Reported IF: <strong>${pub.impactFactor}</strong></span>` : ''}
-                        </div>
-                        <h3 class="text-sm sm:text-base font-serif font-bold text-navy-900 leading-snug">
-                            ${pub.title}
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600">
-                            <i class="fa-regular fa-newspaper text-bronze-600 mr-1.5"></i>${pub.journal}
-                        </p>
-                    </div>
-                    <button type="button" onclick="copyToClipboard('${pub.title.replace(/'/g, "\\'")} — ${pub.journal.replace(/'/g, "\\'")}', 'Citation Copied')" class="self-start sm:self-center px-3 py-1.5 rounded-lg bg-white hover:bg-navy-900 text-slate-700 hover:text-white border border-slate-200 text-xs font-medium transition-colors shrink-0 flex items-center gap-1.5">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Cite</span>
-                    </button>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Filter Journals by Search Input
-        function filterPublications() {
-            const query = document.getElementById('pub-search-input').value.toLowerCase().trim();
-            if (!query) {
-                renderJournals(journalPublications);
-                return;
-            }
-            const filtered = journalPublications.filter(pub => 
-                pub.title.toLowerCase().includes(query) ||
-                pub.journal.toLowerCase().includes(query) ||
-                pub.year.toLowerCase().includes(query) ||
-                pub.indexing.toLowerCase().includes(query)
-            );
-            renderJournals(filtered);
-        }
-
-        // Switch Publication Section Tabs
-        function switchPubTab(tabName) {
-            const tabs = ['journals', 'books', 'conferences'];
-            tabs.forEach(t => {
-                const btn = document.getElementById(`tab-${t}`);
-                const panel = document.getElementById(`panel-${t}`);
-                if (t === tabName) {
-                    btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-                    btn.classList.add('bg-navy-900', 'text-white', 'shadow-xs');
-                    panel.classList.remove('hidden');
-                } else {
-                    btn.classList.remove('bg-navy-900', 'text-white', 'shadow-xs');
-                    btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-                    panel.classList.add('hidden');
+            /* ======================================================================
+               1. PUBLICATION DATASET (ALL 20 ARTICLES FROM CV)
+               ====================================================================== */
+            var PUBLICATIONS = [
+                {
+                    no: 1,
+                    title: "IoT-based smart healthcare using efficient data gathering and data analysis",
+                    journal: "Peer-to-Peer Networking and Applications (Springer)",
+                    year: "2025",
+                    ifactor: "2.6",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 2,
+                    title: "An optimal secure defense mechanism for DDoS attack in IoT network using feature optimization and intrusion detection system",
+                    journal: "Journal of Intelligent & Fuzzy Systems: Applications in Engineering and Technology (SAGE)",
+                    year: "2024",
+                    ifactor: "1.0",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 3,
+                    title: "Hybrid Optimization Algorithms for Resource Allocation in Heterogeneous Cognitive Radio Networks",
+                    journal: "Neural Processing Letters (Springer)",
+                    year: "2023",
+                    ifactor: "2.8",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 4,
+                    title: "Reconfigurable design of hybrid MIMO detection scheme for spatially multiplexed MIMO system",
+                    journal: "Telecommunication Systems (Springer)",
+                    year: "2023",
+                    ifactor: "2.3",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 5,
+                    title: "Enhanced Life Time Improvement for Wireless Body Sensor Networks using Optimal Clustering and Advanced Path Selection Protocol",
+                    journal: "Wireless Personal Communications (Springer)",
+                    year: "2022",
+                    ifactor: "2.2",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 6,
+                    title: "Brushless direct current motor with MV-PID controller management system based on arm microcontroller",
+                    journal: "Circuit World (Emerald)",
+                    year: "2022",
+                    ifactor: "0.7",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 7,
+                    title: "A Review on Wireless Sensor Networks: Routing",
+                    journal: "Wireless Personal Communications (Springer)",
+                    year: "2021",
+                    ifactor: "2.2",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 8,
+                    title: "Improved torque performance in BLDC-motor-drive through Jaya optimization implemented on Xilinx platform",
+                    journal: "Microprocessors and Microsystems (Elsevier)",
+                    year: "2021",
+                    ifactor: "2.6",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 9,
+                    title: "An optimized deep neural network based DoS attack detection in wireless video sensor network",
+                    journal: "Journal of Ambient Intelligence and Humanized Computing (Springer)",
+                    year: "2021",
+                    ifactor: "1.0",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 10,
+                    title: "Energy efficient aggregation technique-based realizable secure aware routing protocol for wireless sensor network",
+                    journal: "IET Wireless Sensor Systems (IET)",
+                    year: "2020",
+                    ifactor: "2.4",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 11,
+                    title: "Smart home autonomous water management system for agricultural applications",
+                    journal: "World Journal of Engineering (Emerald)",
+                    year: "2020",
+                    ifactor: "1.6",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 12,
+                    title: "An improved power conditioning system for grid integration of solar power using ANFIS based FOPID controller",
+                    journal: "Microprocessors and Microsystems (Elsevier)",
+                    year: "2020",
+                    ifactor: "2.6",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 13,
+                    title: "NOSS (Novel Optimal Sleep Scheduling) scheme for energy and data reliability optimization in mobile cloud-assisted wireless sensor networks",
+                    journal: "The Journal of Engineering (Wiley-IET)",
+                    year: "2020",
+                    ifactor: "1.0",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 14,
+                    title: "Optimal partial aggregation based energy delay compromise technique for wireless sensor network",
+                    journal: "IETE Journal of Research",
+                    year: "2019",
+                    ifactor: "2.0",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 15,
+                    title: "An optimal data aggregation scheme for wireless sensor network using QOS parameters with efficient failure detection and loss recovery technique",
+                    journal: "Neural network world",
+                    year: "2019",
+                    ifactor: "1.6",
+                    indexing: "SCI & Scopus",
+                    category: "sci"
+                },
+                {
+                    no: 16,
+                    title: "Double secure optimal partial aggregation using trust inference and hybrid syncryption algorithm for wireless sensor networks",
+                    journal: "Journal of Computational and Theoretical Nanoscience",
+                    year: "2018",
+                    ifactor: "1.0",
+                    indexing: "Scopus",
+                    category: "scopus"
+                },
+                {
+                    no: 17,
+                    title: "An Energy and Delay Aware Optimal Data Aggregation using Three Fold Algorithm for WSN",
+                    journal: "International Journal of Business Information Systems",
+                    year: "",
+                    ifactor: "1.2",
+                    indexing: "Q2 Scopus-indexed",
+                    category: "scopus"
+                },
+                {
+                    no: 18,
+                    title: "Swarm Intellect Optimization Technique (SIOT) based mischievous detection and improve Authentication in Mobile Wireless Sensor Network",
+                    journal: "Turkish Online Journal of Qualitative Inquiry",
+                    year: "",
+                    ifactor: "",
+                    indexing: "Scopus-indexed",
+                    category: "scopus"
+                },
+                {
+                    no: 19,
+                    title: "Robust Real-Time Multiscale Ship Detection Using YOLOv3 and Support Vector Machines",
+                    journal: "Aegaeum Journal, Vol. 8(8), pp. 842–854",
+                    year: "",
+                    ifactor: "",
+                    indexing: "Scopus-indexed",
+                    category: "scopus"
+                },
+                {
+                    no: 20,
+                    title: "An Optimization Algorithm to Improve Lifetime of Wireless Video Sensor Network over the Secure Transmission Link with Enhanced Security Feature",
+                    journal: "Solid State Technology",
+                    year: "",
+                    ifactor: "",
+                    indexing: "Q4 Scopus-indexed",
+                    category: "scopus"
                 }
-            });
+            ];
 
-            const searchWrapper = document.getElementById('pub-search-wrapper');
-            if (tabName === 'journals') {
-                searchWrapper.classList.remove('hidden');
-            } else {
-                searchWrapper.classList.add('hidden');
+            /* ======================================================================
+               2. STATE & DOM REFERENCES
+               ====================================================================== */
+            var activeFilter = "all";
+            var searchQuery = "";
+            var toastTimeout = null;
+
+            var pubListEl = document.getElementById("pub-list");
+            var pubCountEl = document.getElementById("pub-count");
+            var pubSearchEl = document.getElementById("pub-search");
+            var filterButtons = document.querySelectorAll(".filter-btn");
+
+            /* ======================================================================
+               3. TOAST NOTIFICATION & CLIPBOARD HELPER
+               ====================================================================== */
+            function showToast(title, message) {
+                var toast = document.getElementById("toast");
+                var titleEl = document.getElementById("toast-title");
+                var msgEl = document.getElementById("toast-msg");
+
+                titleEl.textContent = title;
+                msgEl.textContent = message;
+                toast.classList.add("show");
+
+                if (toastTimeout) {
+                    clearTimeout(toastTimeout);
+                }
+                toastTimeout = setTimeout(function () {
+                    toast.classList.remove("show");
+                }, 3200);
             }
-        }
 
-        // Toast Notification System
-        let toastTimer;
-        function showToast(title, message) {
-            const toast = document.getElementById('toast-notification');
-            document.getElementById('toast-title').textContent = title;
-            document.getElementById('toast-message').textContent = message;
-
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 3500);
-        }
-
-        // Clipboard Copy Helper
-        function copyToClipboard(text, label) {
-            try {
-                const textarea = document.createElement('textarea');
+            function copyText(text, label) {
+                var textarea = document.createElement("textarea");
                 textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
+                textarea.setAttribute("readonly", "");
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
                 document.body.appendChild(textarea);
                 textarea.select();
-                document.execCommand('copy');
+                try {
+                    document.execCommand("copy");
+                    showToast(label, text);
+                } catch (err) {
+                    showToast("Reference Text", text);
+                }
                 document.body.removeChild(textarea);
-                showToast(label, text);
-            } catch (e) {
-                showToast('Reference Ready', text);
             }
-        }
 
-        // Contact Form Handler
-        function handleAcademicContact(event) {
-            event.preventDefault();
-            const sender = document.getElementById('sender-name').value.trim();
-            const subject = document.getElementById('inquiry-subject').value;
-            showToast(
-                'Correspondence Logged',
-                `Thank you, ${sender}. Your message regarding "${subject}" is ready for Dr. A. Raja Basha.`
-            );
-            event.target.reset();
-        }
+            /* ======================================================================
+               4. SAFE DOM RENDERING FOR PUBLICATIONS
+               ====================================================================== */
+            function renderPublications() {
+                var filtered = PUBLICATIONS.filter(function (item) {
+                    var matchesCategory = activeFilter === "all" || item.category === activeFilter;
+                    if (!matchesCategory) {
+                        return false;
+                    }
+                    if (!searchQuery) {
+                        return true;
+                    }
+                    var haystack = (
+                        item.title + " " +
+                        item.journal + " " +
+                        item.year + " " +
+                        item.indexing
+                    ).toLowerCase();
+                    return haystack.indexOf(searchQuery) !== -1;
+                });
 
-        // Initial Render
-        renderJournals(journalPublications);
+                pubListEl.innerHTML = "";
+                pubCountEl.textContent = "Showing " + filtered.length + " of " + PUBLICATIONS.length + " publications";
+
+                if (filtered.length === 0) {
+                    var emptyDiv = document.createElement("div");
+                    emptyDiv.className = "empty-state";
+                    emptyDiv.textContent = "No publications matched your current filter or search term.";
+                    pubListEl.appendChild(emptyDiv);
+                    return;
+                }
+
+                filtered.forEach(function (pub) {
+                    var article = document.createElement("article");
+                    article.className = "pub-item";
+
+                    var mainDiv = document.createElement("div");
+                    mainDiv.className = "pub-main";
+
+                    var tagsDiv = document.createElement("div");
+                    tagsDiv.className = "pub-tags";
+
+                    var numSpan = document.createElement("span");
+                    numSpan.className = "pub-num";
+                    numSpan.textContent = "#" + (pub.no < 10 ? "0" + pub.no : pub.no);
+                    tagsDiv.appendChild(numSpan);
+
+                    var idxSpan = document.createElement("span");
+                    idxSpan.className = pub.category === "sci" ? "pub-badge-sci" : "pub-badge-scopus";
+                    idxSpan.textContent = pub.indexing;
+                    tagsDiv.appendChild(idxSpan);
+
+                    if (pub.year) {
+                        var yearSpan = document.createElement("span");
+                        yearSpan.className = "pub-year";
+                        yearSpan.textContent = pub.year;
+                        tagsDiv.appendChild(yearSpan);
+                    }
+
+                    if (pub.ifactor) {
+                        var ifSpan = document.createElement("span");
+                        ifSpan.className = "pub-if";
+                        ifSpan.textContent = "Reported IF: " + pub.ifactor;
+                        tagsDiv.appendChild(ifSpan);
+                    }
+
+                    var titleEl = document.createElement("h3");
+                    titleEl.className = "pub-title";
+                    titleEl.textContent = pub.title;
+
+                    var journalEl = document.createElement("p");
+                    journalEl.className = "pub-journal";
+                    journalEl.textContent = pub.journal;
+
+                    mainDiv.appendChild(tagsDiv);
+                    mainDiv.appendChild(titleEl);
+                    mainDiv.appendChild(journalEl);
+
+                    var citeBtn = document.createElement("button");
+                    citeBtn.type = "button";
+                    citeBtn.className = "btn-cite";
+                    citeBtn.textContent = "Copy Citation";
+                    citeBtn.addEventListener("click", function () {
+                        var yearPart = pub.year ? " (" + pub.year + "). " : ". ";
+                        var citation = "A. Raja Basha" + yearPart + pub.title + ". " + pub.journal + ".";
+                        copyText(citation, "Citation Copied");
+                    });
+
+                    article.appendChild(mainDiv);
+                    article.appendChild(citeBtn);
+                    pubListEl.appendChild(article);
+                });
+            }
+
+            /* ======================================================================
+               5. EVENT LISTENERS
+               ====================================================================== */
+            // Filter tabs
+            filterButtons.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    filterButtons.forEach(function (b) {
+                        b.classList.remove("active");
+                    });
+                    btn.classList.add("active");
+                    activeFilter = btn.getAttribute("data-filter") || "all";
+                    renderPublications();
+                });
+            });
+
+            // Search input
+            pubSearchEl.addEventListener("input", function () {
+                searchQuery = pubSearchEl.value.trim().toLowerCase();
+                renderPublications();
+            });
+
+            // Mobile menu toggle
+            var mobileToggle = document.getElementById("mobile-toggle");
+            var navLinks = document.getElementById("nav-links");
+            mobileToggle.addEventListener("click", function () {
+                var isOpen = navLinks.classList.toggle("open");
+                mobileToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            navLinks.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    navLinks.classList.remove("open");
+                    mobileToggle.setAttribute("aria-expanded", "false");
+                });
+            });
+
+            // Portrait image error fallback & local file preview
+            var portraitImg = document.getElementById("portrait-img");
+            var portraitFallback = document.getElementById("portrait-fallback");
+            var portraitInput = document.getElementById("portrait-input");
+            var portraitBtn = document.getElementById("portrait-btn");
+
+            portraitImg.addEventListener("error", function () {
+                portraitImg.style.display = "none";
+                portraitFallback.classList.add("is-visible");
+            });
+
+            portraitBtn.addEventListener("click", function () {
+                portraitInput.click();
+            });
+
+            portraitInput.addEventListener("change", function (event) {
+                var file = event.target.files && event.target.files[0];
+                if (!file) {
+                    return;
+                }
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    portraitImg.src = loadEvent.target.result;
+                    portraitImg.style.display = "block";
+                    portraitFallback.classList.remove("is-visible");
+                    showToast("Portrait Preview Updated", "Selected image loaded into the faculty portrait frame.");
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Copy buttons & Print button
+            document.getElementById("copy-email-btn").addEventListener("click", function () {
+                copyText("arajabasha@gmail.com", "Email Address Copied");
+            });
+
+            document.getElementById("copy-phone-btn").addEventListener("click", function () {
+                copyText("+91 99449 60517", "Mobile Number Copied");
+            });
+
+            document.getElementById("print-cv-btn").addEventListener("click", function () {
+                window.print();
+            });
+
+            // Contact form submission
+            document.getElementById("contact-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                var senderName = document.getElementById("sender-name").value.trim();
+                var topic = document.getElementById("sender-topic").value;
+                showToast(
+                    "Inquiry Recorded",
+                    "Thank you, " + senderName + ". Your message regarding \"" + topic + "\" is ready."
+                );
+                event.target.reset();
+            });
+
+            // Dynamic footer year
+            document.getElementById("footer-year").textContent = String(new Date().getFullYear());
+
+            // Initial render
+            renderPublications();
+        })();
     </script>
 </body>
 </html>
