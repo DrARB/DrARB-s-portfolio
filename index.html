@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. A. Raja Basha | Associate Professor, ECE | Chennai Institute of Technology</title>
+    <title>Dr. A. Raja Basha, M.E., Ph.D. | Associate Professor, ECE | Chennai Institute of Technology</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <!-- Google Fonts: Playfair Display / Merriweather (Serif) + Inter (Sans) + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for crisp academic & engineering icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script>
@@ -19,22 +19,24 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        display: ['Playfair Display', 'Georgia', 'serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#0f172a',
+                        navy: {
+                            800: '#1E3A8A',
+                            900: '#0F172A',
+                            950: '#090E1A',
                         },
-                        accent: {
-                            500: '#0ea5e9',
-                            600: '#0284c7',
+                        bronze: {
+                            100: '#FEF3C7',
+                            600: '#B45309',
+                            700: '#92400E',
+                        },
+                        ivory: {
+                            50: '#FAF9F6',
+                            100: '#F5F3EE',
                         }
                     }
                 }
@@ -42,12 +44,12 @@
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-ivory-50 text-slate-800 font-sans antialiased selection:bg-navy-900 selection:text-white">
 
-    <!-- Toast Notification Banner (Replaces alert()) -->
+    <!-- Toast Notification Banner -->
     <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+        <div class="bg-navy-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-amber-600/40 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-600/20 text-amber-400 flex items-center justify-center shrink-0">
                 <i class="fa-solid fa-check"></i>
             </div>
             <div>
@@ -57,943 +59,1181 @@
         </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200/80 transition-all">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Brand / Name -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-900 to-blue-800 text-white flex items-center justify-center font-mono font-bold text-lg shadow-sm group-hover:shadow-md transition-all">
-                        RB
+                <!-- Formal Monogram & Title -->
+                <a href="#overview" class="flex items-center gap-3.5 group">
+                    <div class="w-11 h-11 rounded-xl bg-navy-900 border border-amber-600/50 text-amber-400 flex items-center justify-center font-display font-bold text-lg shadow-sm group-hover:bg-navy-800 transition-colors">
+                        ARB
                     </div>
                     <div>
-                        <span class="block text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-none">Dr. A. Raja Basha</span>
-                        <span class="block text-xs font-medium text-blue-700 mt-1">Associate Professor • Dept. of ECE</span>
+                        <span class="block text-base sm:text-lg font-display font-bold text-navy-900 tracking-tight leading-none">
+                            Dr. A. Raja Basha, <span class="text-sm font-serif font-normal text-slate-600">M.E., Ph.D.</span>
+                        </span>
+                        <span class="block text-xs font-medium text-bronze-600 mt-1">
+                            Associate Professor • Dept. of ECE, Chennai Institute of Technology
+                        </span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="#about" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-700 hover:bg-blue-50/60 transition-colors">Biography</a>
-                    <a href="#research" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-700 hover:bg-blue-50/60 transition-colors">Research & Patents</a>
-                    <a href="#teaching" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-700 hover:bg-blue-50/60 transition-colors">Teaching</a>
-                    <a href="#consulting" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-700 hover:bg-blue-50/60 transition-colors">Consulting</a>
-                    <a href="#contact" class="ml-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-slate-900 text-white hover:bg-blue-700 transition-all shadow-sm">
-                        Get in Touch
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <a href="#overview" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Overview</a>
+                    <a href="#career" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Academic Career</a>
+                    <a href="#projects" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Funded Projects</a>
+                    <a href="#publications" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Publications & Books</a>
+                    <a href="#credentials" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-100 transition-colors">Education & Credentials</a>
+                    <a href="#contact" class="ml-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-navy-900 text-white hover:bg-navy-800 border border-navy-900 transition-all shadow-xs">
+                        Contact
                     </a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-navy-900 hover:bg-slate-100 focus:outline-none">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Dropdown Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1 shadow-lg">
-            <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700">Biography</a>
-            <a href="#research" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700">Research & Innovation</a>
-            <a href="#teaching" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700">Teaching & Courses</a>
-            <a href="#consulting" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700">ARB Consulting Services</a>
-            <a href="#contact" class="mobile-nav-link block mt-2 px-4 py-3 rounded-xl text-base font-semibold text-center bg-blue-700 text-white">Contact & Academic Links</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1 shadow-xl">
+            <a href="#overview" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Overview</a>
+            <a href="#career" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Academic Career</a>
+            <a href="#projects" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Funded Projects</a>
+            <a href="#publications" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Publications & Books</a>
+            <a href="#credentials" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800">Education & Credentials</a>
+            <a href="#contact" class="mobile-nav-link block mt-2 px-4 py-3 rounded-xl text-sm font-semibold text-center bg-navy-900 text-white">Contact & Correspondence</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-slate-900 text-white pt-16 pb-20 lg:pt-24 lg:pb-28">
-        <!-- Subtle Circuit / Grid Background SVG -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <!-- 1. Hero & Scholarly Profile Header -->
+    <section id="overview" class="relative bg-navy-900 text-white pt-14 pb-20 lg:pt-20 lg:pb-24 border-b-4 border-bronze-600">
+        <!-- Subtle Classical Grid Overlay -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <pattern id="circuit-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#93c5fd" stroke-width="1"/>
-                        <circle cx="0" cy="0" r="2.5" fill="#60a5fa"/>
-                        <path d="M 15 15 L 45 15 L 45 45" fill="none" stroke="#38bdf8" stroke-width="0.75"/>
-                        <circle cx="45" cy="45" r="2" fill="#38bdf8"/>
+                    <pattern id="scholarly-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+                        <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-width="0.75"/>
                     </pattern>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#circuit-grid)" />
+                <rect width="100%" height="100%" fill="url(#scholarly-grid)" />
             </svg>
         </div>
 
-        <!-- Ambient Glow -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-10 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
-
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
                 
-                <!-- Left Column: Intro & CTAs -->
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/90 border border-blue-700/60 text-blue-300 text-xs sm:text-sm font-medium">
-                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                        Chennai Institute of Technology • Kundrathur, Chennai
+                <!-- Left Column: Credentials, Bio & Research Identifiers -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-xl bg-navy-800/80 border border-amber-500/40 text-amber-300 text-xs font-medium">
+                        <i class="fa-solid fa-university"></i>
+                        <span>Department of Electronics and Communication Engineering (ECE) • Chennai Institute of Technology, Kundrathur, Chennai</span>
                     </div>
 
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
-                        Dr. A. Raja Basha
-                    </h1>
-
-                    <p class="text-lg sm:text-xl font-medium text-blue-200 leading-relaxed">
-                        Associate Professor, Department of Electronics and Communication Engineering (ECE)
-                    </p>
-
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-                        Advancing next-generation <span class="text-white font-medium">Embedded Architectures</span>, <span class="text-white font-medium">Autonomous UAV Swarm Networks</span>, <span class="text-white font-medium">Wireless Sensor Ecosystems</span>, and <span class="text-white font-medium">Point-of-Care Biosensing Hardware</span> through academic rigor and industrial innovation.
-                    </p>
-
-                    <!-- Action Buttons -->
-                    <div class="pt-2 flex flex-wrap gap-3 sm:gap-4">
-                        <a href="#research" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm sm:text-base transition-all shadow-lg shadow-blue-950/50 flex items-center gap-2">
-                            <span>Explore Research & Patents</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="#consulting" class="px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-slate-700 font-semibold text-sm sm:text-base transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-microchip text-cyan-400"></i>
-                            <span>ARB Consulting Services</span>
-                        </a>
+                    <div>
+                        <h1 class="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
+                            Dr. A. Raja Basha, <span class="text-amber-400 font-serif font-normal text-2xl sm:text-3xl">M.E., Ph.D.</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-serif text-slate-200 mt-2">
+                            Associate Professor • Department of Electronics and Communication Engineering
+                        </p>
+                        <p class="text-xs sm:text-sm font-mono text-amber-300/90 mt-1">
+                            Chennai Institute of Technology, Chennai (November 2026 – Present)
+                        </p>
                     </div>
 
-                    <!-- Quick Metrics Strip -->
-                    <div class="pt-6 grid grid-cols-3 gap-4 sm:gap-6 border-t border-slate-800 max-w-xl">
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-bold text-white font-mono">45+</p>
-                            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Indexed Publications</p>
+                    <!-- Executive Professional Summary -->
+                    <p class="text-slate-300 text-base leading-relaxed border-l-2 border-amber-500 pl-4">
+                        Professor and academic administrator with <strong class="text-white font-semibold">19.5+ years of cumulative experience</strong> across teaching, funded research, industry, academic leadership, and institutional administration, including over seven years of post-Ph.D. academic service. Principal Investigator of a <strong class="text-white font-semibold">DST, Government of India-funded project valued at ₹28.89 Lakhs</strong>, with 20 SCI/SCIE and Scopus-indexed publications spanning Wireless Sensor Networks, IoT, Machine Learning, Embedded Systems, Cyber-Security, Robotics, and Intelligent Systems.
+                    </p>
+
+                    <!-- Experience Breakdown Strip -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
+                            <span class="block text-lg sm:text-xl font-display font-bold text-amber-400">19.5 Yrs</span>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Cumulative Experience</span>
                         </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-bold text-cyan-400 font-mono">12+</p>
-                            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Patents Filed & Granted</p>
+                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
+                            <span class="block text-lg sm:text-xl font-display font-bold text-white">7 Yrs</span>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Post-Ph.D. Teaching</span>
                         </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-bold text-white font-mono">15+</p>
-                            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Years Academic & R&D</p>
+                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
+                            <span class="block text-lg sm:text-xl font-display font-bold text-white">14.5 Yrs</span>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Total Research (Incl. Ph.D.)</span>
+                        </div>
+                        <div class="bg-navy-950/70 border border-slate-700/80 rounded-xl p-3">
+                            <span class="block text-lg sm:text-xl font-display font-bold text-white">5 Yrs</span>
+                            <span class="block text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Industry & Pre-Ph.D. (5+5)</span>
+                        </div>
+                    </div>
+
+                    <!-- Research Identifiers & Scholarly Profiles Bar -->
+                    <div class="pt-2 space-y-2.5">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Verified Scholarly Identifiers & Repositories</p>
+                        <div class="flex flex-wrap gap-2.5">
+                            <a href="https://orcid.org/0000-0002-2327-2848" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
+                                <i class="fa-brands fa-orcid text-emerald-400 text-sm"></i>
+                                <span>ORCID: <strong class="font-mono text-amber-300">0000-0002-2327-2848</strong></span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                            </a>
+
+                            <a href="https://www.scopus.com/authid/detail.uri?authorId=57212558657" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
+                                <i class="fa-solid fa-book-open text-amber-400 text-sm"></i>
+                                <span>Scopus ID: <strong class="font-mono text-amber-300">57212558657</strong> (18 Indexed)</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                            </a>
+
+                            <a href="https://www.webofscience.com/wos/author/record/1473555" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
+                                <i class="fa-solid fa-award text-sky-400 text-sm"></i>
+                                <span>WoS ID: <strong class="font-mono text-amber-300">E-7993-2019</strong> (20 SCI / 16 Core)</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                            </a>
+
+                            <a href="https://scholar.google.com/scholar?q=Dr+Adam+Raja+Basha" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
+                                <i class="fa-solid fa-graduation-cap text-blue-400 text-sm"></i>
+                                <span>Google Scholar</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/search/results/all/?keywords=Dr.%20A.%20Raja%20Basha" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-slate-100 transition-all">
+                                <i class="fa-brands fa-linkedin text-sky-400 text-sm"></i>
+                                <span>LinkedIn</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Academic Profile Card -->
-                <div class="lg:col-span-5">
-                    <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl">
-                        <div class="flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-5">
-                            <!-- Profile Portrait Container with Graceful Fallback -->
-                            <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-blue-500/60 shadow-lg bg-slate-900 shrink-0">
-                                <img 
-                                    src="https://placehold.co/400x400/1e293b/60a5fa?text=Dr.+A.+Raja+Basha" 
-                                    onerror="this.onerror=null;this.src='https://placehold.co/400x400/0f172a/93c5fd?text=ARB';"
-                                    alt="Dr. A. Raja Basha - Associate Professor ECE" 
-                                    class="w-full h-full object-cover"
-                                >
-                                <div class="absolute bottom-2 right-2 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-slate-900" title="Active Faculty & Researcher"></div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <span class="inline-block px-3 py-1 rounded-lg bg-blue-500/15 text-blue-300 font-mono text-xs font-medium">
-                                    Ph.D. • M.E. • B.E. (ECE)
-                                </span>
-                                <h2 class="text-xl font-bold text-white">Academic & R&D Profile</h2>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Department of Electronics and Communication Engineering<br>
-                                    <span class="text-slate-400">Chennai Institute of Technology (Autonomous), Sarathy Nagar, Kundrathur, Chennai - 600069</span>
-                                </p>
+                <!-- Right Column: Formal Portrait Frame & Portrait Uploader Helper -->
+                <div class="lg:col-span-4">
+                    <div class="bg-navy-950/90 border border-amber-600/40 rounded-2xl p-6 shadow-2xl text-center space-y-5">
+                        <!-- Portrait Container -->
+                        <div class="relative mx-auto w-44 h-48 sm:w-48 sm:h-52 rounded-2xl overflow-hidden border-2 border-amber-500/80 shadow-xl bg-gradient-to-b from-navy-800 to-navy-950 flex flex-col items-center justify-center group">
+                            <!-- Default local relative path `profile.jpg` for GitHub Pages; falls back gracefully to distinguished ARB monogram frame -->
+                            <img 
+                                id="portrait-image"
+                                src="./profile.jpg" 
+                                onerror="this.classList.add('hidden'); document.getElementById('portrait-monogram-fallback').classList.remove('hidden');"
+                                alt="Dr. A. Raja Basha, M.E., Ph.D." 
+                                class="w-full h-full object-cover object-top"
+                            >
+                            <!-- Distinguished Fallback Monogram Frame -->
+                            <div id="portrait-monogram-fallback" class="hidden w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-br from-navy-800 via-navy-900 to-slate-950">
+                                <div class="w-20 h-20 rounded-full border-2 border-amber-500/70 bg-navy-950/80 flex items-center justify-center mb-2.5 shadow-inner">
+                                    <span class="font-display font-bold text-2xl tracking-wider text-amber-400">ARB</span>
+                                </div>
+                                <span class="text-xs font-serif font-semibold text-white">Dr. A. Raja Basha</span>
+                                <span class="text-[10px] font-mono text-amber-300/80 mt-0.5">M.E., Ph.D. (Anna Univ.)</span>
                             </div>
                         </div>
 
-                        <!-- Core Focus Tags -->
-                        <div class="mt-6 pt-6 border-t border-slate-700/80">
-                            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">Core Research Domains</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-slate-200 font-medium">Embedded Systems</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-slate-200 font-medium">Wireless Sensor Networks</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-slate-200 font-medium">UAV Swarm Comms</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-slate-200 font-medium">Biosensing Hardware</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-slate-200 font-medium">High-Reliability PCB</span>
-                            </div>
+                        <!-- Portrait Upload / Preview Helper for GitHub Pages Deployment -->
+                        <div class="space-y-2">
+                            <input type="file" id="portrait-file-input" accept="image/*" class="hidden" onchange="previewPortraitPhoto(event)">
+                            <button type="button" onclick="document.getElementById('portrait-file-input').click()" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-navy-800 border border-slate-700 hover:border-amber-500/60 text-xs font-medium text-amber-300 transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-camera"></i>
+                                <span>Upload / Preview Portrait Photo</span>
+                            </button>
+                            <p class="text-[11px] text-slate-400 leading-snug">
+                                Tip: Place your yellow-shirt portrait as <code class="text-amber-300 font-mono">profile.jpg</code> in the same folder as <code class="text-slate-300 font-mono">index.html</code> on GitHub Pages.
+                            </p>
                         </div>
 
-                        <!-- Quick Copy Email Bar -->
-                        <div class="mt-6 bg-slate-900/90 rounded-xl p-3 border border-slate-700/70 flex items-center justify-between gap-2">
-                            <div class="flex items-center gap-2.5 truncate">
-                                <i class="fa-regular fa-envelope text-blue-400 text-sm shrink-0"></i>
-                                <span id="hero-email-text" class="text-xs sm:text-sm font-mono text-slate-200 truncate">rajabasha.ece@citchennai.net</span>
+                        <!-- Quick Official Contact & Print CV Action -->
+                        <div class="pt-3 border-t border-slate-800 space-y-2.5 text-left">
+                            <div class="flex items-center justify-between text-xs bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-800">
+                                <span class="font-mono text-slate-200 truncate">arajabasha@gmail.com</span>
+                                <button type="button" onclick="copyToClipboard('arajabasha@gmail.com', 'Email Copied')" class="text-amber-400 hover:text-amber-300 font-semibold ml-2 shrink-0">
+                                    Copy
+                                </button>
                             </div>
-                            <button onclick="copyToClipboard('rajabasha.ece@citchennai.net', 'Academic Email Copied')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-blue-600 text-xs font-medium text-slate-200 hover:text-white transition-colors shrink-0">
-                                Copy
+                            <button type="button" onclick="window.print()" class="w-full py-2.5 px-4 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-xs font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-print"></i>
+                                <span>Print / Save Academic Profile PDF</span>
                             </button>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    <!-- Concise Academic Bio Section -->
-    <section id="about" class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-                
-                <!-- Left Heading & Highlights -->
-                <div class="lg:col-span-5 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-user-graduate"></i>
-                        Academic Biography
+            <!-- Bibliometric Dashboard Cards (As on October 2026) -->
+            <div class="mt-12 pt-8 border-t border-slate-800">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Bibliometric & Research Impact Indicators</span>
+                    <span class="text-xs font-mono text-slate-400">Verified Record • As on October 2026</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-quote-right"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-display font-bold text-white">476</p>
+                            <p class="text-xs text-slate-300 font-medium">Total Scholarly Citations</p>
+                        </div>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
-                        Bridging Foundational Electronics with Autonomous Systems
-                    </h2>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        Dedicated to mentoring engineering scholars and translating laboratory breakthroughs into field-deployable hardware architectures.
-                    </p>
 
-                    <!-- Institution Card -->
-                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-3">
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 mt-0.5">
-                                <i class="fa-solid fa-building-columns"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-bold text-slate-900">Chennai Institute of Technology</h3>
-                                <p class="text-xs text-slate-500 mt-0.5">Associate Professor • Department of ECE</p>
-                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                                    Actively leading Centre of Excellence initiatives in Embedded Prototyping, IoT Telemetry, and Industrial PCB Reliability Testing.
-                                </p>
-                            </div>
+                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-300 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-display font-bold text-white">9 <span class="text-slate-500 text-lg font-normal">|</span> 9</p>
+                            <p class="text-xs text-slate-300 font-medium">h-index: 9 &nbsp;•&nbsp; i10-index: 9</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-display font-bold text-white">20</p>
+                            <p class="text-xs text-slate-300 font-medium">SCI / WoS Indexed Journals</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-950/90 border border-slate-700/90 rounded-2xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-display font-bold text-amber-400">₹29.14 L</p>
+                            <p class="text-xs text-slate-300 font-medium">DST Grant & Consultancy</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right Detailed Bio & Milestones -->
-                <div class="lg:col-span-7 space-y-6 text-slate-700 text-base leading-relaxed">
-                    <p>
-                        <strong class="text-slate-900 font-semibold">Dr. A. Raja Basha</strong> serves as an Associate Professor in the Department of Electronics and Communication Engineering at <strong class="text-slate-900 font-semibold">Chennai Institute of Technology, Kundrathur, Chennai</strong>. With a strong foundation in microcontrollers, digital system synthesis, and wireless communication protocols, his career spans over a decade and a half of teaching, funded research, and industrial hardware consultancy.
-                    </p>
-                    <p>
-                        His research group focuses on ultra-low-power <strong class="text-slate-900 font-semibold">Wireless Sensor Networks (WSNs)</strong>, resilient mesh topologies for <strong class="text-slate-900 font-semibold">UAV Swarm Communication</strong>, and miniaturized <strong class="text-slate-900 font-semibold">Electrochemical & Optical Biosensing</strong> interfaces. He has authored numerous peer-reviewed articles in SCI/Scopus-indexed journals and holds multiple Indian patents addressing real-time environmental monitoring, smart healthcare diagnostics, and fault-tolerant embedded hardware.
-                    </p>
-
-                    <!-- 3 Pillars Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3">
-                        <div class="p-4 rounded-xl bg-blue-50/60 border border-blue-100">
-                            <i class="fa-solid fa-microchip text-blue-700 text-lg mb-2"></i>
-                            <h4 class="text-sm font-bold text-slate-900">Hardware R&D</h4>
-                            <p class="text-xs text-slate-600 mt-1">End-to-end schematic capture, multi-layer PCB layout, and firmware validation.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-cyan-50/60 border border-cyan-100">
-                            <i class="fa-solid fa-tower-broadcast text-cyan-700 text-lg mb-2"></i>
-                            <h4 class="text-sm font-bold text-slate-900">Swarm & WSN</h4>
-                            <p class="text-xs text-slate-600 mt-1">Low-latency ad-hoc routing and energy-aware telemetry for autonomous nodes.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-100">
-                            <i class="fa-solid fa-chalkboard-user text-indigo-700 text-lg mb-2"></i>
-                            <h4 class="text-sm font-bold text-slate-900">Pedagogy</h4>
-                            <p class="text-xs text-slate-600 mt-1">Hands-on lab mentorship in 8051 architecture, RTL design, and IPC standards.</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Research & Innovation Showcase -->
-    <section id="research" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Section Header + Interactive Filter Tabs -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-                <div class="space-y-3 max-w-2xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100/80 text-blue-800 text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-flask"></i>
-                        Research & Innovation
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
-                        Focus Areas, Patents & Selected Publications
-                    </h2>
-                    <p class="text-slate-600 text-sm sm:text-base">
-                        Explore active research thrusts and click any project or patent card to inspect technical abstracts and specifications.
-                    </p>
-                </div>
-
-                <!-- Interactive Filter Pills -->
-                <div class="flex flex-wrap gap-2" role="tablist" aria-label="Research Category Filter">
-                    <button onclick="filterResearch('all')" data-filter="all" class="research-tab active-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-white shadow-sm transition-all">
-                        All Innovations
-                    </button>
-                    <button onclick="filterResearch('embedded')" data-filter="embedded" class="research-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all">
-                        Embedded & WSN
-                    </button>
-                    <button onclick="filterResearch('uav')" data-filter="uav" class="research-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all">
-                        UAV Swarm
-                    </button>
-                    <button onclick="filterResearch('biosensing')" data-filter="biosensing" class="research-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all">
-                        Biosensing & Patents
-                    </button>
-                </div>
-            </div>
-
-            <!-- Research Cards Grid -->
-            <div id="research-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                
-                <!-- Card 1: Embedded Systems & WSN -->
-                <article data-category="embedded" class="research-card group bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-3 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold">Embedded Systems & WSN</span>
-                            <span class="font-mono text-xs text-slate-400">IEEE / Scopus</span>
-                        </div>
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-xl bg-blue-600/10 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-network-wired text-lg"></i>
-                            </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                                Energy-Harvesting Hierarchical Wireless Sensor Networks for Industrial Telemetry
-                            </h3>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                            Design of ultra-low-power ARM Cortex-M & RISC-V sensor nodes featuring adaptive duty-cycling, LoRaWAN/BLE dual-band transceivers, and cluster-head rotation algorithms to extend network lifetime by 42%.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">LoRa / Sub-GHz</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">RTOS</span>
-                        </div>
-                        <button onclick="openDetailModal('wsn')" class="text-xs sm:text-sm font-semibold text-blue-700 hover:text-blue-900 flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-blue-50 transition-colors">
-                            <span>View Abstract</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 2: UAV Swarm Communication -->
-                <article data-category="uav" class="research-card group bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-cyan-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-3 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-cyan-50 text-cyan-700 text-xs font-semibold">UAV Swarm Communication</span>
-                            <span class="font-mono text-xs text-slate-400">FANET Architecture</span>
-                        </div>
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-xl bg-cyan-600/10 text-cyan-700 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-satellite-dish text-lg"></i>
-                            </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
-                                Self-Healing Mesh Routing & Low-Latency Telemetry for Multi-UAV Swarms
-                            </h3>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                            Development of Flying Ad-Hoc Network (FANET) RF front-ends and dynamic link-quality routing protocols enabling collision-free cooperative search, disaster mapping, and RF interference mitigation across autonomous drone fleets.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">FANET</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">MAVLink / RF</span>
-                        </div>
-                        <button onclick="openDetailModal('uav')" class="text-xs sm:text-sm font-semibold text-cyan-700 hover:text-cyan-900 flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-cyan-50 transition-colors">
-                            <span>View Abstract</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 3: Biosensing Patent -->
-                <article data-category="biosensing" class="research-card group bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-3 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold">Granted / Published Patent</span>
-                            <span class="font-mono text-xs text-slate-400">Indian Patent Office</span>
-                        </div>
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-heart-pulse text-lg"></i>
-                            </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                                Portable Microfluidic Electrochemical Biosensor System for Rapid Biomarker Detection
-                            </h3>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                            Patented handheld potentiostat and analog front-end (AFE) conditioning circuit capable of sub-nanoampere cyclic voltammetry readout with embedded edge calibration and wireless cloud clinical reporting.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">Biosensing</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">Analog Front-End</span>
-                        </div>
-                        <button onclick="openDetailModal('biosensor')" class="text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <span>Patent Details</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 4: Embedded Fault-Tolerant Hardware Patent -->
-                <article data-category="embedded biosensing" class="research-card group bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-3 mb-4">
-                            <span class="px-3 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-semibold">Patent & Journal Publication</span>
-                            <span class="font-mono text-xs text-slate-400">Hardware Reliability</span>
-                        </div>
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-xl bg-indigo-600/10 text-indigo-700 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-shield-halved text-lg"></i>
-                            </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-indigo-700 transition-colors">
-                                Real-Time Thermal & Solder-Joint Anomaly Diagnostics in High-Density Embedded PCBs
-                            </h3>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                            Integrated impedance spectroscopy and on-board thermal sensor arrays for predictive maintenance of mission-critical automotive and medical electronics assemblies under vibration and thermal cycling.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">DFM / DFT</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px]">IPC-A-610</span>
-                        </div>
-                        <button onclick="openDetailModal('pcb_patent')" class="text-xs sm:text-sm font-semibold text-indigo-700 hover:text-indigo-900 flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span>View Summary</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </button>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching & Courses Section -->
-    <section id="teaching" class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+    <!-- 2. Academic & Administrative Appointments (Chronological Timeline) -->
+    <section id="career" class="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mb-12 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-book-open"></i>
-                    Teaching & Pedagogy
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100/80 text-bronze-700 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-landmark"></i>
+                    Academic & Administrative Appointments
                 </div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
-                    Core Undergraduate & Postgraduate Courses
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-navy-900">
+                    Chronological Leadership & Teaching Tenure
                 </h2>
-                <p class="text-slate-600 text-base">
-                    Combining rigorous theoretical foundations with laboratory hardware synthesis, oscilloscope debugging, and industry-aligned design standards.
+                <p class="text-slate-600 text-sm sm:text-base font-serif">
+                    Over nineteen years of progressive academic, research governance, accreditation (NAAC/NBA/UGC), and institutional administration experience.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-navy-800/25 ml-3 sm:ml-6 space-y-8">
                 
-                <!-- Course 1: 8051 Microcontroller Architecture -->
-                <div class="rounded-2xl bg-slate-50 border border-slate-200/90 p-6 sm:p-7 flex flex-col justify-between hover:border-blue-400 hover:shadow-lg transition-all">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-white font-mono text-xs font-semibold">EC-CORE • LAB + THEORY</span>
-                            <i class="fa-solid fa-microchip text-2xl text-blue-600"></i>
+                <!-- Role 1 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-bronze-600 ring-4 ring-amber-100"></span>
+                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
+                                Associate Professor – Department of Electronics and Communication Engineering (ECE)
+                            </h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-navy-900 text-amber-300 font-mono text-xs font-semibold shrink-0">
+                                November 2026 – Present
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">
-                            8051 Microcontroller Architecture
-                        </h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                            In-depth exploration of 8051 internal registers, memory organization, interrupt priority handling, timers/counters, UART serial protocols, and peripheral interfacing in Assembly and Embedded C.
+                        <p class="text-sm font-semibold text-bronze-700 mb-3">
+                            Chennai Institute of Technology, Kundrathur, Chennai, Tamil Nadu
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-700 mb-6">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-blue-600"></i>
-                                <span>SFRs, Addressing Modes & Instruction Pipelining</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-blue-600"></i>
-                                <span>ADC/DAC, LCD, Stepper Motor & Sensor Interfacing</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-blue-600"></i>
-                                <span>Keil µVision Simulation & Hardware Target Flashing</span>
-                            </li>
-                        </ul>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Conducting core undergraduate and postgraduate academic teaching, supervising research scholars, and contributing to departmental curriculum development and laboratory innovation in embedded systems and wireless communications.
+                        </p>
                     </div>
-                    <button onclick="openDetailModal('course_8051')" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-blue-600 text-slate-800 hover:text-white border border-slate-200 hover:border-blue-600 text-xs sm:text-sm font-semibold transition-all">
-                        View Syllabus & Lab Modules
-                    </button>
                 </div>
 
-                <!-- Course 2: Digital Logic Design -->
-                <div class="rounded-2xl bg-slate-50 border border-slate-200/90 p-6 sm:p-7 flex flex-col justify-between hover:border-blue-400 hover:shadow-lg transition-all">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-white font-mono text-xs font-semibold">EC-FOUNDATION</span>
-                            <i class="fa-solid fa-diagram-project text-2xl text-cyan-600"></i>
+                <!-- Role 2 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
+                                Professor and Head – Department of Robotics and Automation
+                            </h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
+                                April 2025 – September 2026
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">
-                            Digital Logic Design
-                        </h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                            Comprehensive study of Boolean algebra, Karnaugh-map & Quine-McCluskey minimization, combinational arithmetic blocks, synchronous finite state machines (FSM), and Verilog HDL modeling.
+                        <p class="text-sm font-semibold text-navy-800 mb-3">
+                            KVILL University, Tamil Nadu
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-700 mb-6">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-cyan-600"></i>
-                                <span>Combinational MUX/DEMUX, Encoders & ALU Design</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-cyan-600"></i>
-                                <span>Mealy/Moore State Machines, Counters & Shift Registers</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-cyan-600"></i>
-                                <span>Timing Analysis, Setup/Hold Margins & FPGA Synthesis</span>
-                            </li>
-                        </ul>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Led comprehensive academic, research, and administrative operations of the department; coordinated NBA accreditation documentation, student placement readiness, faculty workload allocation, and holistic student technical development.
+                        </p>
                     </div>
-                    <button onclick="openDetailModal('course_dld')" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-cyan-600 text-slate-800 hover:text-white border border-slate-200 hover:border-cyan-600 text-xs sm:text-sm font-semibold transition-all">
-                        View Syllabus & Lab Modules
-                    </button>
                 </div>
 
-                <!-- Course 3: PCB Assembly & Reliability -->
-                <div class="rounded-2xl bg-slate-50 border border-slate-200/90 p-6 sm:p-7 flex flex-col justify-between hover:border-blue-400 hover:shadow-lg transition-all">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-white font-mono text-xs font-semibold">INDUSTRY ELECTIVE</span>
-                            <i class="fa-solid fa-layer-group text-2xl text-indigo-600"></i>
+                <!-- Role 3 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
+                                Associate Professor and Head – Global Certifications
+                            </h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
+                                January 2022 – April 2025
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">
-                            PCB Assembly & Reliability
-                        </h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                            Practical engineering curriculum covering multi-layer stack-up design, signal/power integrity, SMT reflow soldering profiles, IPC-A-610 workmanship criteria, and accelerated life testing.
+                        <p class="text-sm font-semibold text-navy-800 mb-3">
+                            Koneru Lakshmaiah Education Foundation (KLEF), Vijayawada, Andhra Pradesh
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-700 mb-6">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-indigo-600"></i>
-                                <span>DFM / DFA Rules, Impedance Control & EMI Shielding</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-indigo-600"></i>
-                                <span>SMT Stencil Printing, Reflow Profiles & AOI/X-Ray Inspection</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-indigo-600"></i>
-                                <span>Thermal Cycling, Vibration & RoHS Solder Reliability</span>
-                            </li>
-                        </ul>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Directed industry-recognized global certification programs for over <strong class="text-navy-900">3,200+ students</strong>; coordinated NAAC and NBA accreditation documentation; managed course coordination, outcome-based education (OBE) attainment, Skillathons, Faculty Development Programs (FDPs), and technical seminars.
+                        </p>
                     </div>
-                    <button onclick="openDetailModal('course_pcb')" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-indigo-600 text-slate-800 hover:text-white border border-slate-200 hover:border-indigo-600 text-xs sm:text-sm font-semibold transition-all">
-                        View Syllabus & Lab Modules
-                    </button>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-800 ring-4 ring-slate-100"></span>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
+                                Associate Professor and Dean – Research and Development
+                            </h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
+                                January 2019 – January 2022
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-navy-800 mb-3">
+                            Audisankara Group of Institutions, Gudur, Andhra Pradesh
+                        </p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Spearheaded institutional funded-project proposals, SCI/Scopus research publication drives, industrial consultancy engagements, departmental research targets, workshops, and regulatory NAAC, NBA, and UGC compliance documentation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Role 5 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-slate-100"></span>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
+                                Assistant Professor & Placement / Industrial Visit Coordinator
+                            </h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
+                                June 2012 – July 2016
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-navy-800 mb-3">
+                            GRT Institute of Engineering and Technology, Tiruthani, Tamil Nadu
+                        </p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Delivered undergraduate engineering courses, mentored student project teams, organized industrial visits and national conferences, coordinated campus placements, and prepared NBA accreditation files.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Role 6 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-slate-100"></span>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:border-navy-800/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-navy-900">
+                                Assistant Professor
+                            </h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-xs font-semibold shrink-0">
+                                May 2011 – May 2012
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-navy-800 mb-3">
+                            VSB Engineering College, Karur, Tamil Nadu
+                        </p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Handled undergraduate lecture courses and practical laboratory instruction in Computer Networks and Electronic Circuits.
+                        </p>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Professional Consulting Highlight: ARB Consulting Services -->
-    <section id="consulting" class="py-16 sm:py-24 bg-slate-900 text-white relative overflow-hidden">
-        <!-- Decorative Accent -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-slate-800/90 to-slate-900 border border-slate-700/90 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                    
-                    <!-- Left Description -->
-                    <div class="lg:col-span-7 space-y-5">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
-                            <i class="fa-solid fa-briefcase"></i>
-                            Professional Engineering Advisory
-                        </div>
-
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                            ARB Consulting Services
-                        </h2>
-
-                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                            Partnering with hardware startups, EMS manufacturers, R&D labs, and academic institutions to solve complex electronics design, prototyping, and manufacturability challenges.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80">
-                                <div class="flex items-center gap-2.5 text-cyan-400 font-semibold text-sm mb-1.5">
-                                    <i class="fa-solid fa-compass-drafting"></i>
-                                    <span>Custom PCB & DFM Audits</span>
-                                </div>
-                                <p class="text-xs text-slate-400 leading-relaxed">
-                                    Schematic reviews, high-speed routing optimization, EMI/EMC compliance readiness, and IPC reliability audits.
-                                </p>
-                            </div>
-
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80">
-                                <div class="flex items-center gap-2.5 text-blue-400 font-semibold text-sm mb-1.5">
-                                    <i class="fa-solid fa-microchip"></i>
-                                    <span>Embedded & IoT Prototyping</span>
-                                </div>
-                                <p class="text-xs text-slate-400 leading-relaxed">
-                                    Firmware architecture, low-power sensor node integration, and custom RF/UAV telemetry hardware bring-up.
-                                </p>
-                            </div>
-
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80">
-                                <div class="flex items-center gap-2.5 text-emerald-400 font-semibold text-sm mb-1.5">
-                                    <i class="fa-solid fa-vial-circle-check"></i>
-                                    <span>Biosensor Hardware R&D</span>
-                                </div>
-                                <p class="text-xs text-slate-400 leading-relaxed">
-                                    Precision analog front-end signal conditioning and PoC diagnostic device hardware validation.
-                                </p>
-                            </div>
-
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80">
-                                <div class="flex items-center gap-2.5 text-indigo-400 font-semibold text-sm mb-1.5">
-                                    <i class="fa-solid fa-users-gear"></i>
-                                    <span>Corporate & FDP Workshops</span>
-                                </div>
-                                <p class="text-xs text-slate-400 leading-relaxed">
-                                    Tailored technical training on 8051/ARM embedded systems, digital synthesis, and SMT reliability.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Interactive Inquiry Card -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-slate-950/80 border border-slate-700 rounded-2xl p-6 sm:p-7 space-y-5">
-                            <h3 class="text-lg font-bold text-white">Initiate a Consulting Inquiry</h3>
-                            <p class="text-xs sm:text-sm text-slate-400">
-                                Share your project scope or technical advisory requirement directly with Dr. A. Raja Basha.
-                            </p>
-
-                            <form id="consulting-form" onsubmit="handleInquirySubmit(event)" class="space-y-4">
-                                <div>
-                                    <label for="inq-name" class="block text-xs font-medium text-slate-300 mb-1">Your Name / Organization</label>
-                                    <input type="text" id="inq-name" required placeholder="e.g., Karthik S., Apex Electronics" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
-                                </div>
-                                <div>
-                                    <label for="inq-email" class="block text-xs font-medium text-slate-300 mb-1">Work or Academic Email</label>
-                                    <input type="email" id="inq-email" required placeholder="name@organization.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
-                                </div>
-                                <div>
-                                    <label for="inq-domain" class="block text-xs font-medium text-slate-300 mb-1">Engagement Area</label>
-                                    <select id="inq-domain" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-blue-500">
-                                        <option value="PCB Design & Reliability Audit">PCB Design & Reliability Audit</option>
-                                        <option value="Embedded Systems / WSN Prototyping">Embedded Systems / WSN Prototyping</option>
-                                        <option value="UAV Swarm / RF Telemetry">UAV Swarm / RF Telemetry</option>
-                                        <option value="Biosensing Instrumentation">Biosensing Instrumentation</option>
-                                        <option value="Academic Collaboration / FDP">Academic Collaboration / FDP</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="inq-message" class="block text-xs font-medium text-slate-300 mb-1">Project Brief</label>
-                                    <textarea id="inq-message" rows="3" required placeholder="Briefly describe your technical requirements or timeline..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"></textarea>
-                                </div>
-                                <button type="submit" class="w-full py-3 px-5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                    <span>Send Consulting Request</span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer & Academic Links -->
-    <footer id="contact" class="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <!-- 3. Sponsored Research Projects & Industrial Consultancy -->
+    <section id="projects" class="py-16 sm:py-24 bg-ivory-100 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/90">
+            <div class="max-w-3xl mb-12 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-navy-900 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-flask-vial"></i>
+                    Sponsored Research & Consultancy
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-navy-900">
+                    Government-Funded Grants & Industrial Projects
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base font-serif">
+                    Principal Investigator and Consultant for sponsored hardware-software R&D initiatives totaling ₹29,14,037.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- DST Funded Project -->
+                <div class="bg-white rounded-2xl border-2 border-amber-600/30 p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-amber-100 text-bronze-700 text-xs font-bold uppercase tracking-wide">
+                                Principal Investigator • DST Govt. of India
+                            </span>
+                            <span class="font-mono text-lg sm:text-xl font-bold text-navy-900 bg-ivory-50 px-3 py-1 rounded-xl border border-slate-200">
+                                ₹28,89,037
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-navy-900 mb-3 leading-snug">
+                            Development of Smart Wireless Bed Wet Detection System in Elderly Care
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                            Technology Interventions for Disabled and Elderly (TIDE) initiative focused on non-invasive wireless moisture sensing, low-power embedded telemetry, and real-time caregiver alerting to enhance geriatric healthcare dignity and hygiene.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+                        <span class="font-mono text-slate-600">
+                            <strong>Sanction Order:</strong> SEED/TIDE/2016/514
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-semibold">
+                            Completed / Funded Grant
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Consultancy Project -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-navy-900/10 text-navy-900 text-xs font-bold uppercase tracking-wide">
+                                Principal Consultant • Industrial Consultancy
+                            </span>
+                            <span class="font-mono text-lg sm:text-xl font-bold text-navy-900 bg-ivory-50 px-3 py-1 rounded-xl border border-slate-200">
+                                ₹25,000
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-navy-900 mb-3 leading-snug">
+                            EsECC_SDN – Attack Detection and Classification Model for MANET
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                            Design and validation of an Enhanced Elliptic Curve Cryptography and Software-Defined Networking (EsECC_SDN) intrusion detection and attack classification framework tailored for Mobile Ad-Hoc Networks (MANETs).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+                        <span class="font-mono text-slate-600">
+                            <strong>Domain:</strong> Network Security & SDN
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-blue-50 text-navy-800 font-semibold">
+                            Consultancy Deliverable
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Peer-Reviewed Publications & Authored Books (Interactive Filterable & Searchable Catalog) -->
+    <section id="publications" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header -->
+            <div class="max-w-3xl mb-10 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100/80 text-bronze-700 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-book-journal-whills"></i>
+                    Scholarly Output & Monographs
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-navy-900">
+                    Peer-Reviewed Publications, Books & Keynote Contributions
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base font-serif">
+                    Comprehensive catalog of 20 SCI/WoS & Scopus-indexed journal articles, authored textbooks, Wiley book chapters, and international conference presentations.
+                </p>
+            </div>
+
+            <!-- Interactive Filter Tabs & Search Bar -->
+            <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap gap-2" role="tablist">
+                    <button type="button" onclick="switchPubTab('journals')" id="tab-journals" class="pub-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-navy-900 text-white shadow-xs transition-all">
+                        All SCI/WoS & Scopus Journals (20)
+                    </button>
+                    <button type="button" onclick="switchPubTab('books')" id="tab-books" class="pub-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:text-navy-900 border border-slate-200 transition-all">
+                        Books & Book Chapters (2)
+                    </button>
+                    <button type="button" onclick="switchPubTab('conferences')" id="tab-conferences" class="pub-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:text-navy-900 border border-slate-200 transition-all">
+                        Conference & Keynote Talks (25+)
+                    </button>
+                </div>
+
+                <!-- Search Input (Applies to Journals) -->
+                <div id="pub-search-wrapper" class="relative w-full lg:w-80">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input 
+                        type="text" 
+                        id="pub-search-input" 
+                        oninput="filterPublications()"
+                        placeholder="Search title, journal, or year (2018–2025)..." 
+                        class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white border border-slate-300 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-navy-800"
+                    >
+                </div>
+            </div>
+
+            <!-- PANEL A: All 20 Journals (16 Numbered SCI/WoS/Scopus + 4 Additional Scopus) -->
+            <div id="panel-journals" class="space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 px-1">
+                    <span id="journal-count-label">Showing all <strong>20</strong> indexed journal publications (2018–2025)</span>
+                    <span class="italic">Note: Journal impact factors are retained as reported in the Curriculum Vitae.</span>
+                </div>
+
+                <div id="journals-list" class="space-y-3.5">
+                    <!-- Populated dynamically via JavaScript for clean search/filter -->
+                </div>
+            </div>
+
+            <!-- PANEL B: Books & Book Chapters -->
+            <div id="panel-books" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Book 1 -->
+                <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-navy-900 text-amber-300 text-xs font-bold uppercase">Authored Textbook</span>
+                            <span class="font-mono text-xs font-semibold text-slate-600">Published: 2025</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-navy-900 mb-2">
+                            Hands on Data Visualization
+                        </h3>
+                        <p class="text-sm font-medium text-bronze-700 mb-3">
+                            Role: Book Author • Scientific International Publishing House
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Comprehensive practical guide covering modern analytical visualization methodologies, exploratory data storytelling, and engineering dataset interpretation.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200/80 text-xs font-mono text-slate-700">
+                        ISBN: 978-93-6674-629-6
+                    </div>
+                </div>
+
+                <!-- Book Chapter 2 -->
+                <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-amber-100 text-bronze-700 text-xs font-bold uppercase">Edited Volume Book Chapter</span>
+                            <span class="font-mono text-xs font-semibold text-slate-600">07 September 2021</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-navy-900 mb-2">
+                            Chapter 8: Novel Deep Learning Approaches in Cyber Security and Digital Forensics
+                        </h3>
+                        <p class="text-sm font-medium text-navy-800 mb-3">
+                            In: <em>Simulation and Analysis of Mathematical Methods in Real-Time Engineering Applications</em> • John Wiley & Sons
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Examines deep neural architectures and mathematical modeling frameworks for automated cyber-threat detection and forensic analysis in real-time engineering networks.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between gap-2 text-xs font-mono">
+                        <span class="text-slate-700 truncate">DOI: 10.1002/9781119785521.ch8</span>
+                        <a href="https://doi.org/10.1002/9781119785521.ch8" target="_blank" rel="noopener noreferrer" class="text-navy-800 hover:underline font-semibold shrink-0">
+                            View DOI <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL C: Conference & Keynote Talks -->
+            <div id="panel-conferences" class="hidden space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </div>
+                        <p class="text-3xl font-display font-bold text-navy-900">25+</p>
+                        <h3 class="text-base font-bold text-slate-900 mt-1">National & International Conference Presentations</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                            Peer-reviewed research papers presented at IEEE, Springer, and international engineering symposiums on WSNs, IoT security, MIMO systems, and embedded control.
+                        </p>
+                    </div>
+
+                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <p class="text-3xl font-display font-bold text-navy-900">10+</p>
+                        <h3 class="text-base font-bold text-slate-900 mt-1">Faculty Development Programs (FDPs)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                            Completed and coordinated AICTE/ATAL and institutional FDPs in emerging electronics, machine learning, outcome-based education, and research methodology.
+                        </p>
+                    </div>
+
+                    <div class="bg-ivory-50 border border-slate-200 rounded-2xl p-6">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-podium"></i>
+                        </div>
+                        <p class="text-3xl font-display font-bold text-navy-900">3+</p>
+                        <h3 class="text-base font-bold text-slate-900 mt-1">Invited Guest Lectures & Keynote Talks</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                            Delivered invited plenary talks and technical sessions at national conferences, technical symposiums, and engineering workshops.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Academic Qualifications & Professional Credentials -->
+    <section id="credentials" class="py-16 sm:py-24 bg-ivory-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
                 
-                <!-- Column 1: Faculty & Institution Info -->
-                <div class="lg:col-span-5 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-lg">
-                            RB
+                <!-- Left: Academic Qualifications (Anna University) -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="space-y-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-navy-900 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-user-graduate"></i>
+                            Academic Qualifications
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Dr. A. Raja Basha</h3>
-                            <p class="text-xs text-blue-400">Associate Professor • Department of ECE</p>
-                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-navy-900">
+                            University Degrees
+                        </h2>
                     </div>
-                    <p class="text-sm text-slate-400 leading-relaxed max-w-md">
-                        Department of Electronics and Communication Engineering,<br>
-                        Chennai Institute of Technology,<br>
-                        Sarathy Nagar, Kundrathur, Chennai - 600069, Tamil Nadu, India.
-                    </p>
-                    <div class="pt-1 flex flex-wrap gap-3">
-                        <button onclick="copyToClipboard('rajabasha.ece@citchennai.net', 'Email Address Copied')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-mono text-slate-200 transition-colors">
-                            <i class="fa-regular fa-envelope text-blue-400"></i>
-                            <span>rajabasha.ece@citchennai.net</span>
-                            <i class="fa-regular fa-copy text-slate-500"></i>
-                        </button>
+
+                    <div class="space-y-4">
+                        <!-- Ph.D. -->
+                        <div class="bg-white border-l-4 border-bronze-600 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-bronze-700">Doctor of Philosophy (Full-Time)</span>
+                                <span class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-amber-100 text-bronze-700">2016 – 2019</span>
+                            </div>
+                            <h3 class="text-lg font-display font-bold text-navy-900">
+                                Ph.D. in Wireless Sensor Networks, IoT, Machine Learning & Embedded Systems
+                            </h3>
+                            <p class="text-sm font-medium text-slate-600 mt-1">
+                                Anna University, Chennai, Tamil Nadu
+                            </p>
+                        </div>
+
+                        <!-- M.E. -->
+                        <div class="bg-white border-l-4 border-navy-800 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-navy-800">Master of Engineering (Full-Time)</span>
+                                <span class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700">2009 – 2011</span>
+                            </div>
+                            <h3 class="text-lg font-display font-bold text-navy-900">
+                                M.E. in Power Electronics and Drives
+                            </h3>
+                            <p class="text-sm font-medium text-slate-600 mt-1">
+                                Anna University, Chennai, Tamil Nadu
+                            </p>
+                        </div>
+
+                        <!-- B.E. -->
+                        <div class="bg-white border-l-4 border-slate-400 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-600">Bachelor of Engineering (Full-Time)</span>
+                                <span class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700">2001 – 2005</span>
+                            </div>
+                            <h3 class="text-lg font-display font-bold text-navy-900">
+                                B.E. in Electronics and Communication Engineering
+                            </h3>
+                            <p class="text-sm font-medium text-slate-600 mt-1">
+                                Anna University, Chennai, Tamil Nadu
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Section Navigation -->
-                <div class="lg:col-span-3 space-y-3">
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-white">Portfolio Sections</h4>
-                    <ul class="space-y-2.5 text-sm text-slate-400">
-                        <li><a href="#about" class="hover:text-blue-400 transition-colors">Academic Biography</a></li>
-                        <li><a href="#research" class="hover:text-blue-400 transition-colors">Research & Innovation</a></li>
-                        <li><a href="#teaching" class="hover:text-blue-400 transition-colors">Teaching & Courses</a></li>
-                        <li><a href="#consulting" class="hover:text-blue-400 transition-colors">ARB Consulting Services</a></li>
-                    </ul>
+                <!-- Right: Governance, Editorial Service & Financial/Regulatory Certifications -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="space-y-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100/80 text-bronze-700 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-certificate"></i>
+                            Governance & Professional Service
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-navy-900">
+                            Certifications & Editorial Credentials
+                        </h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Corporate Governance -->
+                        <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-display font-bold text-navy-900">
+                                    MCA-Registered Independent Director
+                                </h3>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                                    Registered Independent Director with the <strong class="text-slate-800">Ministry of Corporate Affairs (MCA), Government of India</strong>, qualified for corporate board governance, audit oversight, and strategic advisory.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Editorial & Peer Review Service -->
+                        <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-display font-bold text-navy-900">
+                                    International Journal & Conference Peer Reviewer
+                                </h3>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                                    Active technical manuscript reviewer for flagship journals and conferences published by <strong class="text-slate-800">IEEE, Springer, Elsevier, Taylor & Francis, and Wiley</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Financial & Regulatory Certifications -->
+                        <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fa-solid fa-shield-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-display font-bold text-navy-900">
+                                    Financial, Capital Markets & Regulatory Certifications
+                                </h3>
+                                <ul class="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-700">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-bronze-600"></i>
+                                        <span><strong>AMFI</strong> – Mutual Fund Advisor Certification</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-bronze-600"></i>
+                                        <span><strong>NCFM</strong> – Share Trading Certification (National Stock Exchange – NSE)</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-bronze-600"></i>
+                                        <span><strong>IRDA</strong> – Life and General Insurance Advisor Certification</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Column 3: Academic & Research Profiles -->
-                <div class="lg:col-span-4 space-y-3">
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-white">Academic & Indexing Profiles</h4>
-                    <p class="text-xs text-slate-400 mb-3">
-                        Connect on scholarly repositories and institutional portals for citation metrics and full-text papers.
-                    </p>
-                    <div class="grid grid-cols-2 gap-2.5">
-                        <a href="#contact" onclick="showToast('Google Scholar', 'Opening Dr. A. Raja Basha Scholar profile reference.'); return false;" class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-200 transition-colors">
-                            <i class="fa-solid fa-graduation-cap text-blue-400 text-sm"></i>
-                            <span>Google Scholar</span>
-                        </a>
-                        <a href="#contact" onclick="showToast('ORCID iD', 'Verified Researcher Record • Dr. A. Raja Basha'); return false;" class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-200 transition-colors">
-                            <i class="fa-brands fa-orcid text-emerald-400 text-sm"></i>
-                            <span>ORCID Profile</span>
-                        </a>
-                        <a href="#contact" onclick="showToast('Scopus Author ID', 'Indexed Publications & Citation Metrics'); return false;" class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-200 transition-colors">
-                            <i class="fa-solid fa-book-bookmark text-amber-400 text-sm"></i>
-                            <span>Scopus Index</span>
-                        </a>
-                        <a href="#contact" onclick="showToast('LinkedIn Network', 'Connecting with Dr. A. Raja Basha & ARB Consulting'); return false;" class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-200 transition-colors">
-                            <i class="fa-brands fa-linkedin text-sky-400 text-sm"></i>
-                            <span>LinkedIn</span>
-                        </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact & Official Correspondence Footer -->
+    <footer id="contact" class="bg-navy-950 text-slate-300 pt-16 pb-12 border-t-4 border-bronze-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Left Column: Official Contact & Addresses -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Official Correspondence</span>
+                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
+                            Dr. A. Raja Basha, M.E., Ph.D.
+                        </h2>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Associate Professor, Department of Electronics and Communication Engineering<br>
+                            Chennai Institute of Technology, Kundrathur, Chennai – 600069
+                        </p>
+                    </div>
+
+                    <!-- Direct Contact Badges -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <div class="bg-navy-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-2">
+                            <div class="min-w-0">
+                                <span class="block text-[11px] uppercase tracking-wider text-slate-400">Personal & Academic Email</span>
+                                <span class="block text-xs sm:text-sm font-mono text-white truncate mt-0.5">arajabasha@gmail.com</span>
+                            </div>
+                            <button type="button" onclick="copyToClipboard('arajabasha@gmail.com', 'Email Address Copied')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-bronze-600 text-xs font-semibold text-white transition-colors shrink-0">
+                                Copy
+                            </button>
+                        </div>
+
+                        <div class="bg-navy-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-2">
+                            <div>
+                                <span class="block text-[11px] uppercase tracking-wider text-slate-400">Direct Mobile</span>
+                                <a href="tel:+919944960517" class="block text-xs sm:text-sm font-mono text-amber-300 hover:underline mt-0.5">+91 99449 60517</a>
+                            </div>
+                            <button type="button" onclick="copyToClipboard('+91 99449 60517', 'Mobile Number Copied')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-bronze-600 text-xs font-semibold text-white transition-colors shrink-0">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Residential Addresses -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                        <div class="bg-navy-900/70 border border-slate-800/90 rounded-xl p-4">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1.5">
+                                <i class="fa-solid fa-location-dot mr-1"></i> Present Address
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                No. 2, Car Street,<br>
+                                Kanchipuram – 631502,<br>
+                                Tamil Nadu, India.
+                            </p>
+                        </div>
+
+                        <div class="bg-navy-900/70 border border-slate-800/90 rounded-xl p-4">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                                <i class="fa-solid fa-house-chimney mr-1"></i> Permanent Address
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                No. 16N, Meennakadarsa 1st Street,<br>
+                                Vandavasi – 604408,<br>
+                                Tamil Nadu, India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Formal Academic & Research Inquiry Form -->
+                <div class="lg:col-span-6">
+                    <div class="bg-navy-900 border border-slate-800 rounded-2xl p-6 sm:p-7">
+                        <h3 class="text-lg font-display font-bold text-white mb-1">Academic, Doctoral & Consultancy Correspondence</h3>
+                        <p class="text-xs text-slate-400 mb-5">
+                            Send an inquiry regarding research collaboration, Ph.D. supervision, journal peer-review invitations, or technical consultancy.
+                        </p>
+
+                        <form id="academic-contact-form" onsubmit="handleAcademicContact(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="sender-name" class="block text-xs font-medium text-slate-300 mb-1">Full Name & Title</label>
+                                    <input type="text" id="sender-name" required placeholder="Dr. / Prof. / Mr. / Ms." class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label for="sender-email" class="block text-xs font-medium text-slate-300 mb-1">Official Email Address</label>
+                                    <input type="email" id="sender-email" required placeholder="name@institution.edu" class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="inquiry-subject" class="block text-xs font-medium text-slate-300 mb-1">Subject of Correspondence</label>
+                                <select id="inquiry-subject" class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-500">
+                                    <option value="Research Collaboration / Funded Proposal">Research Collaboration / Funded Proposal</option>
+                                    <option value="Ph.D. / Postgraduate Research Supervision">Ph.D. / Postgraduate Research Supervision</option>
+                                    <option value="Keynote Lecture / FDP / Editorial Invitation">Keynote Lecture / FDP / Editorial Invitation</option>
+                                    <option value="Industrial Consultancy & Board Advisory">Industrial Consultancy & Board Advisory</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="inquiry-body" class="block text-xs font-medium text-slate-300 mb-1">Message</label>
+                                <textarea id="inquiry-body" rows="3" required placeholder="Please provide details regarding your academic or institutional inquiry..." class="w-full px-3.5 py-2.5 rounded-xl bg-navy-950 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+                                <button type="submit" class="px-5 py-2.5 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-xs sm:text-sm font-semibold transition-colors flex items-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>Prepare & Log Inquiry</span>
+                                </button>
+                                <button type="button" onclick="window.print()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium transition-colors flex items-center gap-2">
+                                    <i class="fa-solid fa-file-pdf text-amber-400"></i>
+                                    <span>Printable CV Summary</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Bottom Copyright Bar -->
+            <!-- Bottom Copyright & Indexing Bar -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-                <p>&copy; <span id="current-year"></span> Dr. A. Raja Basha. All Rights Reserved.</p>
-                <p>Dept. of ECE, Chennai Institute of Technology • ARB Consulting Services</p>
+                <p>&copy; <span id="current-year"></span> Dr. A. Raja Basha, M.E., Ph.D. All Rights Reserved.</p>
+                <p class="font-mono text-slate-400">ORCID: 0000-0002-2327-2848 &bull; Scopus: 57212558657 &bull; WoS: E-7993-2019</p>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Detail Modal (For Research Abstracts, Patents & Course Syllabi) -->
-    <div id="detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden transform transition-all">
-            <!-- Modal Header -->
-            <div class="px-6 py-5 bg-slate-900 text-white flex items-start justify-between gap-4">
-                <div>
-                    <span id="modal-badge" class="inline-block px-2.5 py-0.5 rounded-md bg-blue-500/20 text-blue-300 font-mono text-xs font-medium mb-1.5">
-                        Category
-                    </span>
-                    <h3 id="modal-title" class="text-lg sm:text-xl font-bold leading-snug">
-                        Detail Title
-                    </h3>
-                </div>
-                <button onclick="closeDetailModal()" aria-label="Close Modal" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Modal Body -->
-            <div class="p-6 sm:p-7 space-y-5 max-h-[75vh] overflow-y-auto">
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Overview & Technical Abstract</h4>
-                    <p id="modal-description" class="text-sm sm:text-base text-slate-700 leading-relaxed">
-                        Detailed description appears here.
-                    </p>
-                </div>
-
-                <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/80">
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">Key Specifications / Learning Outcomes</h4>
-                    <ul id="modal-highlights" class="space-y-2 text-xs sm:text-sm text-slate-700">
-                        <!-- Dynamically populated -->
-                    </ul>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-100">
-                    <span id="modal-meta" class="text-xs font-mono text-slate-500">Reference ID</span>
-                    <div class="flex gap-2">
-                        <button onclick="closeDetailModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold transition-colors">
-                            Close
-                        </button>
-                        <a href="#contact" onclick="closeDetailModal()" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold transition-colors">
-                            Request Full Paper / Syllabus
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript for Interactivity, Filtering, Modals & Clipboard -->
+    <!-- JavaScript: Publications Catalog Data, Search/Filter, Portrait Preview & Clipboard -->
     <script>
-        // Set dynamic footer year
+        // Dynamic year
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Mobile Navigation Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        // Local Portrait Photo Preview Helper (Allows Dr. Basha to preview his yellow-shirt photo immediately)
+        function previewPortraitPhoto(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('portrait-image');
+                const fallback = document.getElementById('portrait-monogram-fallback');
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+                fallback.classList.add('hidden');
+                showToast('Portrait Photo Loaded', 'Previewing selected portrait image in academic profile frame.');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Complete 20-Item Journal Catalog from Curriculum Vitae
+        const journalPublications = [
+            {
+                no: 1,
+                title: "IoT-based smart healthcare using efficient data gathering and data analysis",
+                journal: "Peer-to-Peer Networking and Applications (Springer)",
+                year: "2025",
+                impactFactor: "2.6",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 2,
+                title: "An optimal secure defense mechanism for DDoS attack in IoT network using feature optimization and intrusion detection system",
+                journal: "Journal of Intelligent & Fuzzy Systems: Applications in Engineering and Technology (SAGE)",
+                year: "2024",
+                impactFactor: "1.0",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 3,
+                title: "Hybrid Optimization Algorithms for Resource Allocation in Heterogeneous Cognitive Radio Networks",
+                journal: "Neural Processing Letters (Springer)",
+                year: "2023",
+                impactFactor: "2.8",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 4,
+                title: "Reconfigurable design of hybrid MIMO detection scheme for spatially multiplexed MIMO system",
+                journal: "Telecommunication Systems (Springer)",
+                year: "2023",
+                impactFactor: "2.3",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 5,
+                title: "Enhanced Life Time Improvement for Wireless Body Sensor Networks using Optimal Clustering and Advanced Path Selection Protocol",
+                journal: "Wireless Personal Communications (Springer)",
+                year: "2022",
+                impactFactor: "2.2",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 6,
+                title: "Brushless direct current motor with MV-PID controller management system based on arm microcontroller",
+                journal: "Circuit World (Emerald)",
+                year: "2022",
+                impactFactor: "0.7",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 7,
+                title: "A Review on Wireless Sensor Networks: Routing",
+                journal: "Wireless Personal Communications (Springer)",
+                year: "2021",
+                impactFactor: "2.2",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 8,
+                title: "Improved torque performance in BLDC-motor-drive through Jaya optimization implemented on Xilinx platform",
+                journal: "Microprocessors and Microsystems (Elsevier)",
+                year: "2021",
+                impactFactor: "2.6",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 9,
+                title: "An optimized deep neural network based DoS attack detection in wireless video sensor network",
+                journal: "Journal of Ambient Intelligence and Humanized Computing (Springer)",
+                year: "2021",
+                impactFactor: "1.0",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 10,
+                title: "Energy efficient aggregation technique-based realizable secure aware routing protocol for wireless sensor network",
+                journal: "IET Wireless Sensor Systems (IET)",
+                year: "2020",
+                impactFactor: "2.4",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 11,
+                title: "Smart home autonomous water management system for agricultural applications",
+                journal: "World Journal of Engineering (Emerald)",
+                year: "2020",
+                impactFactor: "1.6",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 12,
+                title: "An improved power conditioning system for grid integration of solar power using ANFIS based FOPID controller",
+                journal: "Microprocessors and Microsystems (Elsevier)",
+                year: "2020",
+                impactFactor: "2.6",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 13,
+                title: "NOSS (Novel Optimal Sleep Scheduling) scheme for energy and data reliability optimization in mobile cloud-assisted wireless sensor networks",
+                journal: "The Journal of Engineering (Wiley-IET)",
+                year: "2020",
+                impactFactor: "1.0",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 14,
+                title: "Optimal partial aggregation based energy delay compromise technique for wireless sensor network",
+                journal: "IETE Journal of Research",
+                year: "2019",
+                impactFactor: "2.0",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 15,
+                title: "An optimal data aggregation scheme for wireless sensor network using QOS parameters with efficient failure detection and loss recovery technique",
+                journal: "Neural Network World",
+                year: "2019",
+                impactFactor: "1.6",
+                indexing: "SCI & Scopus"
+            },
+            {
+                no: 16,
+                title: "Double secure optimal partial aggregation using trust inference and hybrid syncryption algorithm for wireless sensor networks",
+                journal: "Journal of Computational and Theoretical Nanoscience",
+                year: "2018",
+                impactFactor: "1.0",
+                indexing: "Scopus"
+            },
+            {
+                no: 17,
+                title: "An Energy and Delay Aware Optimal Data Aggregation using Three Fold Algorithm for WSN",
+                journal: "International Journal of Business Information Systems",
+                year: "Scopus",
+                impactFactor: "1.2",
+                indexing: "Q2 Scopus-Indexed"
+            },
+            {
+                no: 18,
+                title: "Swarm Intellect Optimization Technique (SIOT) based mischievous detection and improve Authentication in Mobile Wireless Sensor Network",
+                journal: "Turkish Online Journal of Qualitative Inquiry",
+                year: "Scopus",
+                impactFactor: "—",
+                indexing: "Scopus-Indexed"
+            },
+            {
+                no: 19,
+                title: "Robust Real-Time Multiscale Ship Detection Using YOLOv3 and Support Vector Machines",
+                journal: "Aegaeum Journal, Vol. 8(8), pp. 842–854",
+                year: "Scopus",
+                impactFactor: "—",
+                indexing: "Scopus-Indexed"
+            },
+            {
+                no: 20,
+                title: "An Optimization Algorithm to Improve Lifetime of Wireless Video Sensor Network over the Secure Transmission Link with Enhanced Security Feature",
+                journal: "Solid State Technology",
+                year: "Scopus",
+                impactFactor: "—",
+                indexing: "Q4 Scopus-Indexed"
+            }
+        ];
+
+        // Render Journal Publications
+        function renderJournals(items) {
+            const container = document.getElementById('journals-list');
+            const countLabel = document.getElementById('journal-count-label');
+            container.innerHTML = '';
+
+            if (items.length === 0) {
+                countLabel.innerHTML = 'No matching journal publications found.';
+                container.innerHTML = `
+                    <div class="p-8 text-center rounded-2xl bg-ivory-50 border border-slate-200 text-sm text-slate-600">
+                        No publications matched your search query. Try searching by topic (e.g., <em>IoT, MIMO, BLDC, Springer, 2023</em>).
+                    </div>`;
+                return;
+            }
+
+            countLabel.innerHTML = `Showing <strong>${items.length}</strong> of <strong>${journalPublications.length}</strong> indexed journal publications`;
+
+            items.forEach(pub => {
+                const isSCI = pub.indexing.includes('SCI');
+                const badgeClass = isSCI 
+                    ? 'bg-navy-900 text-amber-300 border-navy-900' 
+                    : 'bg-amber-100/80 text-bronze-700 border-amber-300';
+
+                const card = document.createElement('article');
+                card.className = 'bg-ivory-50/70 hover:bg-white border border-slate-200 hover:border-navy-800/40 rounded-xl p-4 sm:p-5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4';
+                card.innerHTML = `
+                    <div class="space-y-1.5">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="font-mono text-xs font-bold text-slate-500">#${String(pub.no).padStart(2, '0')}</span>
+                            <span class="px-2.5 py-0.5 rounded-md border text-[11px] font-semibold ${badgeClass}">
+                                ${pub.indexing}
+                            </span>
+                            ${pub.year !== 'Scopus' ? `<span class="font-mono text-xs font-semibold text-navy-800 bg-slate-200/70 px-2 py-0.5 rounded-md">${pub.year}</span>` : ''}
+                            ${pub.impactFactor !== '—' ? `<span class="font-mono text-[11px] text-slate-600">Reported IF: <strong>${pub.impactFactor}</strong></span>` : ''}
+                        </div>
+                        <h3 class="text-sm sm:text-base font-serif font-bold text-navy-900 leading-snug">
+                            ${pub.title}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600">
+                            <i class="fa-regular fa-newspaper text-bronze-600 mr-1.5"></i>${pub.journal}
+                        </p>
+                    </div>
+                    <button type="button" onclick="copyToClipboard('${pub.title.replace(/'/g, "\\'")} — ${pub.journal.replace(/'/g, "\\'")}', 'Citation Copied')" class="self-start sm:self-center px-3 py-1.5 rounded-lg bg-white hover:bg-navy-900 text-slate-700 hover:text-white border border-slate-200 text-xs font-medium transition-colors shrink-0 flex items-center gap-1.5">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Cite</span>
+                    </button>
+                `;
+                container.appendChild(card);
             });
-        });
+        }
 
-        // Research Category Filtering
-        function filterResearch(category) {
-            const cards = document.querySelectorAll('.research-card');
-            const tabs = document.querySelectorAll('.research-tab');
+        // Filter Journals by Search Input
+        function filterPublications() {
+            const query = document.getElementById('pub-search-input').value.toLowerCase().trim();
+            if (!query) {
+                renderJournals(journalPublications);
+                return;
+            }
+            const filtered = journalPublications.filter(pub => 
+                pub.title.toLowerCase().includes(query) ||
+                pub.journal.toLowerCase().includes(query) ||
+                pub.year.toLowerCase().includes(query) ||
+                pub.indexing.toLowerCase().includes(query)
+            );
+            renderJournals(filtered);
+        }
 
-            // Update active button styles
-            tabs.forEach(tab => {
-                if (tab.dataset.filter === category) {
-                    tab.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-                    tab.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+        // Switch Publication Section Tabs
+        function switchPubTab(tabName) {
+            const tabs = ['journals', 'books', 'conferences'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                const panel = document.getElementById(`panel-${t}`);
+                if (t === tabName) {
+                    btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    btn.classList.add('bg-navy-900', 'text-white', 'shadow-xs');
+                    panel.classList.remove('hidden');
                 } else {
-                    tab.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
-                    tab.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                    btn.classList.remove('bg-navy-900', 'text-white', 'shadow-xs');
+                    btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    panel.classList.add('hidden');
                 }
             });
 
-            // Filter cards smoothly
-            cards.forEach(card => {
-                const cardCategories = card.dataset.category.split(' ');
-                if (category === 'all' || cardCategories.includes(category)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-
-        // Structured Data for Interactive Modal
-        const modalContentData = {
-            wsn: {
-                badge: 'Embedded Systems & WSN • Publication',
-                title: 'Energy-Harvesting Hierarchical Wireless Sensor Networks for Industrial Telemetry',
-                description: 'This research investigates hybrid solar-piezoelectric energy harvesting integrated with low-power embedded sensor nodes. By employing a dynamic cluster-head election heuristic based on residual node energy and link RSSI, the architecture eliminates premature node depletion in harsh industrial monitoring environments.',
-                highlights: [
-                    'Hardware Platform: Ultra-low-power ARM Cortex-M4 with Sub-GHz LoRa & BLE 5.2 transceivers.',
-                    'Protocol Efficiency: 42% improvement in network operational lifespan compared to LEACH baselines.',
-                    'Real-Time Telemetry: Sub-second anomaly alerting with deterministic TDMA slot allocation.'
-                ],
-                meta: 'Domain: Industrial IoT & WSN • CIT ECE Research Group'
-            },
-            uav: {
-                badge: 'Autonomous Systems • FANET Research',
-                title: 'Self-Healing Mesh Routing & Low-Latency Telemetry for Multi-UAV Swarms',
-                description: 'Unmanned Aerial Vehicle (UAV) swarms suffer from rapid topological shifts and intermittent RF fading. We present a predictive link-stability routing framework combined with custom diversity antenna front-ends to maintain uninterrupted command-and-control (C2) and payload telemetry across 3D flight corridors.',
-                highlights: [
-                    '3D Mobility-Aware Routing: Uses GPS velocity vectors to preemptively reroute packets before link drop.',
-                    'Hardware Integration: Lightweight companion computer interface supporting MAVLink over dual-band RF.',
-                    'Applications: Precision agriculture, post-disaster search & rescue, and perimeter surveillance.'
-                ],
-                meta: 'Domain: UAV Swarm Communication • FANET'
-            },
-            biosensor: {
-                badge: 'Indian Patent • Biomedical Instrumentation',
-                title: 'Portable Microfluidic Electrochemical Biosensor System for Rapid Biomarker Detection',
-                description: 'A patented point-of-care (PoC) diagnostic device integrating disposable screen-printed electrodes with a precision low-noise potentiostat PCB. The embedded microcontroller executes Chronoamperometry and Differential Pulse Voltammetry (DPV) routines to quantify target analytes within minutes.',
-                highlights: [
-                    'Analog Precision: Femtoampere-to-microampere transimpedance amplifier with digital baseline drift compensation.',
-                    'Edge Intelligence: On-chip temperature compensation and automated calibration curve fitting.',
-                    'Connectivity: Encrypted BLE transmission to clinician mobile dashboards.'
-                ],
-                meta: 'Status: Patented Innovation • Healthcare Hardware'
-            },
-            pcb_patent: {
-                badge: 'Patent & Journal • Hardware Reliability',
-                title: 'Real-Time Thermal & Solder-Joint Anomaly Diagnostics in High-Density Embedded PCBs',
-                description: 'High-density interconnect (HDI) PCBs operating in automotive and aerospace environments experience thermo-mechanical fatigue. This invention embeds non-invasive impedance sensing traces and distributed thermal diodes to detect micro-cracks in BGA/QFN solder joints prior to catastrophic system failure.',
-                highlights: [
-                    'Prognostic Health Management: Early detection of interconnect resistance drift (>15% threshold).',
-                    'Standards Alignment: Validated against IPC-A-610 Class 3 and JEDEC thermal cycling profiles.',
-                    'Industrial Impact: Reduces field warranty failures in mission-critical embedded controllers.'
-                ],
-                meta: 'Domain: PCB Reliability & Diagnostics'
-            },
-            course_8051: {
-                badge: 'Undergraduate Core Course • ECE',
-                title: '8051 Microcontroller Architecture & Embedded Interfacing',
-                description: 'Provides students with complete mastery over 8-bit microcontroller hardware architecture, memory-mapped I/O, interrupt vector tables, and deterministic real-time firmware development.',
-                highlights: [
-                    'Module 1–2: Internal CPU architecture, PSW flags, RAM banks, SFRs, and addressing modes.',
-                    'Module 3–4: Timer modes (0, 1, 2), Baud rate generation, UART serial communication, and Interrupts.',
-                    'Lab Component: Interfacing 4x4 matrix keypads, 16x2 LCDs, ADC0804, DAC0808, and PWM DC/Stepper motors.'
-                ],
-                meta: 'Department of ECE • Chennai Institute of Technology'
-            },
-            course_dld: {
-                badge: 'Foundational Core Course • ECE',
-                title: 'Digital Logic Design & HDL Synthesis',
-                description: 'Builds systematic analytical skills in Boolean minimization, combinational and sequential logic synthesis, hazard elimination, and hardware description language (Verilog) verification.',
-                highlights: [
-                    'Module 1–2: Canonical forms, K-Maps, Quine-McCluskey method, Adders, Comparators, and Multiplexers.',
-                    'Module 3–4: Latches, Flip-Flops, Synchronous/Asynchronous Counters, and Mealy/Moore FSM design.',
-                    'Lab Component: Logic gate realization, FSM state-table verification, and FPGA testbench simulation.'
-                ],
-                meta: 'Department of ECE • Chennai Institute of Technology'
-            },
-            course_pcb: {
-                badge: 'Industry-Aligned Elective • ECE',
-                title: 'PCB Assembly, Signal Integrity & Reliability Engineering',
-                description: 'Prepares engineers for real-world hardware product development by bridging schematic capture with high-yield Surface Mount Technology (SMT) manufacturing and environmental reliability testing.',
-                highlights: [
-                    'Module 1–2: Multi-layer stack-up planning, controlled impedance traces, grounding, and EMI/EMC mitigation.',
-                    'Module 3–4: Solder paste rheology, reflow oven thermal profiling, wave soldering, and AOI/X-ray inspection.',
-                    'Reliability Lab: IPC-A-610 defect classification, thermal shock testing, and Failure Mode Effects Analysis (FMEA).'
-                ],
-                meta: 'Department of ECE • ARB Consulting Curriculum'
+            const searchWrapper = document.getElementById('pub-search-wrapper');
+            if (tabName === 'journals') {
+                searchWrapper.classList.remove('hidden');
+            } else {
+                searchWrapper.classList.add('hidden');
             }
-        };
-
-        // Modal Open & Close Controls
-        const detailModal = document.getElementById('detail-modal');
-
-        function openDetailModal(key) {
-            const data = modalContentData[key];
-            if (!data) return;
-
-            document.getElementById('modal-badge').textContent = data.badge;
-            document.getElementById('modal-title').textContent = data.title;
-            document.getElementById('modal-description').textContent = data.description;
-            document.getElementById('modal-meta').textContent = data.meta;
-
-            const highlightsList = document.getElementById('modal-highlights');
-            highlightsList.innerHTML = '';
-            data.highlights.forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'flex items-start gap-2.5';
-                li.innerHTML = `<i class="fa-solid fa-check text-blue-600 mt-1 shrink-0"></i><span>${item}</span>`;
-                highlightsList.appendChild(li);
-            });
-
-            detailModal.classList.remove('hidden');
-            detailModal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
         }
 
-        function closeDetailModal() {
-            detailModal.classList.add('hidden');
-            detailModal.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-
-        // Close modal on backdrop click or Escape key
-        detailModal.addEventListener('click', (e) => {
-            if (e.target === detailModal) closeDetailModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !detailModal.classList.contains('hidden')) {
-                closeDetailModal();
-            }
-        });
-
-        // Toast Notification System (Replaces alert())
-        let toastTimeout;
+        // Toast Notification System
+        let toastTimer;
         function showToast(title, message) {
             const toast = document.getElementById('toast-notification');
             document.getElementById('toast-title').textContent = title;
@@ -1002,42 +1242,44 @@
             toast.classList.remove('translate-y-24', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
 
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
                 toast.classList.add('translate-y-24', 'opacity-0');
                 toast.classList.remove('translate-y-0', 'opacity-100');
             }, 3500);
         }
 
-        // Clipboard Copy Helper (Uses execCommand for reliable iframe support)
+        // Clipboard Copy Helper
         function copyToClipboard(text, label) {
             try {
-                const tempInput = document.createElement('textarea');
-                tempInput.value = text;
-                tempInput.style.position = 'fixed';
-                tempInput.style.opacity = '0';
-                document.body.appendChild(tempInput);
-                tempInput.select();
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
                 document.execCommand('copy');
-                document.body.removeChild(tempInput);
-                showToast(label, `${text} copied to clipboard.`);
-            } catch (err) {
-                showToast('Copy Ready', text);
+                document.body.removeChild(textarea);
+                showToast(label, text);
+            } catch (e) {
+                showToast('Reference Ready', text);
             }
         }
 
-        // Consulting Inquiry Form Handler
-        function handleInquirySubmit(event) {
+        // Contact Form Handler
+        function handleAcademicContact(event) {
             event.preventDefault();
-            const name = document.getElementById('inq-name').value.trim();
-            const domain = document.getElementById('inq-domain').value;
-
+            const sender = document.getElementById('sender-name').value.trim();
+            const subject = document.getElementById('inquiry-subject').value;
             showToast(
-                'Inquiry Logged for ARB Consulting',
-                `Thank you, ${name}. Your inquiry regarding "${domain}" has been prepared.`
+                'Correspondence Logged',
+                `Thank you, ${sender}. Your message regarding "${subject}" is ready for Dr. A. Raja Basha.`
             );
             event.target.reset();
         }
+
+        // Initial Render
+        renderJournals(journalPublications);
     </script>
 </body>
 </html>
